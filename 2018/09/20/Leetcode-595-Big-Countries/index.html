@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Leetcode 771.Jewels and Stones | RootUShaw</title>
+  <title>Leetcode 595. Big Countries | RootUShaw</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题描述：You’re given strings J representing the types of stones that are jewels, and S representing the stones you have.  Each character in S is a type of stone you have.  You want to know how many of th">
+  <meta name="description" content="问题描述：There is a table World| name            | continent  | area       | population   | gdp           || ————— | :——–: | :——–: | :———-: | :———–: || Afghanistan     | Asia       | 652230     | 25500100">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode 771.Jewels and Stones">
-<meta property="og:url" content="http://yoursite.com/2018/09/20/Leetcode-771-Jewels-and-Stones/index.html">
+<meta property="og:title" content="Leetcode 595. Big Countries">
+<meta property="og:url" content="http://yoursite.com/2018/09/20/Leetcode-595-Big-Countries/index.html">
 <meta property="og:site_name" content="RootUShaw">
-<meta property="og:description" content="问题描述：You’re given strings J representing the types of stones that are jewels, and S representing the stones you have.  Each character in S is a type of stone you have.  You want to know how many of th">
+<meta property="og:description" content="问题描述：There is a table World| name            | continent  | area       | population   | gdp           || ————— | :——–: | :——–: | :———-: | :———–: || Afghanistan     | Asia       | 652230     | 25500100">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-20T03:51:27.137Z">
+<meta property="og:updated_time" content="2018-09-21T14:45:31.737Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode 771.Jewels and Stones">
-<meta name="twitter:description" content="问题描述：You’re given strings J representing the types of stones that are jewels, and S representing the stones you have.  Each character in S is a type of stone you have.  You want to know how many of th">
+<meta name="twitter:title" content="Leetcode 595. Big Countries">
+<meta name="twitter:description" content="问题描述：There is a table World| name            | continent  | area       | population   | gdp           || ————— | :——–: | :——–: | :———-: | :———–: || Afghanistan     | Asia       | 652230     | 25500100">
   
     <link rel="alternative" href="/atom.xml" title="RootUShaw" type="application/atom+xml">
   
@@ -154,33 +154,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Leetcode-771-Jewels-and-Stones" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Leetcode-595-Big-Countries" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Leetcode 771.Jewels and Stones
+      Leetcode 595. Big Countries
     </h1>
   
 
         
-        <a href="/2018/09/20/Leetcode-771-Jewels-and-Stones/" class="archive-article-date">
-  	<time datetime="2018-09-20T03:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-20</time>
+        <a href="/2018/09/20/Leetcode-595-Big-Countries/" class="archive-article-date">
+  	<time datetime="2018-09-20T15:50:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h2><p>You’re given strings J representing the types of stones that are jewels, and S representing the stones you have.  Each character in S is a type of stone you have.  You want to know how many of the stones you have are also jewels.</p>
-<p>The letters in J are guaranteed distinct, and all characters in J and S are letters. Letters are case sensitive, so “a” is considered a different type of stone from “A”.</p>
-<p><strong>Example 1:</strong><br><strong>Input:</strong> J = “aA”, S = “aAAbbbb”<br><strong>Output:</strong> 3</p>
-<p><strong>Example 2:</strong><br><strong>Input:</strong> J = “z”, S = “ZZ”<br><strong>Output:</strong> 0</p>
-<p><strong>Note:</strong><br>S and J will consist of letters and have length at most 50.<br>The characters in J are distinct.</p>
-<h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numJewelsInStones</span><span class="params">(<span class="built_in">string</span> J, <span class="built_in">string</span> S)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a[<span class="number">100</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;J.length(); i++)&#123;</span><br><span class="line">            a[J[i]-<span class="string">'A'</span>] = <span class="number">1</span>; </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;S.length(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(a[S[i]-<span class="string">'A'</span>] == <span class="number">1</span>)</span><br><span class="line">                count++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>使用hash表的方法，A的ASCII码为65，a的ASCII码为97.</p>
+        <h2 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h2><p>There is a table World<br>| name            | continent  | area       | population   | gdp           |<br>| ————— | :——–: | :——–: | :———-: | :———–: |<br>| Afghanistan     | Asia       | 652230     | 25500100     | 20343000      |<br>| Albania         | Europe     | 28748      | 2831741      | 12960000      |<br>| Algeria         | Africa     | 2381741    | 37100000     | 188681000     |<br>| Andorra         | Europe     | 468        | 78115        | 3712000       |<br>| Angola          | Africa     | 1246700    | 20609294     | 100990000     |<br>| 标题1 | 标题2   | 长长的标题3 | title 4 |<br>| —– | ——— | ———– | ——- |<br>| 内容1 | content 2 |             |         |<br>| 行3  | line3     | column 3    |         |</p>
 
       
 
@@ -260,7 +254,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/09/20/Leetcode-771-Jewels-and-Stones/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/09/20/Leetcode-595-Big-Countries/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -274,18 +268,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/20/Leetcode-709-To-Lower-Case/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Leetcode 709.To Lower Case
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/09/19/小萌新的第一篇博文/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">小萌新的第一篇博文</div>
+    <a href="/2018/09/20/Leetcode-905-Sort-Array-By-Parity/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Leetcode 905. Sort Array By Parity</div>
       <i class="icon-circle-right"></i>
     </a>
   
