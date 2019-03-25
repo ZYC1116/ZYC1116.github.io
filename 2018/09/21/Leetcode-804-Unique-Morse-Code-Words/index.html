@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="RootUShaw">
 <meta property="og:description" content="问题描述：International Morse Code defines a standard encoding where each letter is mapped to a series of dots and dashes, as follows: “a” maps to “.-“, “b” maps to “-…”, “c” maps to “-.-.”, and so on.   F">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-21T15:45:21.205Z">
+<meta property="og:updated_time" content="2019-03-25T07:03:05.927Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode 804.Unique Morse Code Words">
 <meta name="twitter:description" content="问题描述：International Morse Code defines a standard encoding where each letter is mapped to a series of dots and dashes, as follows: “a” maps to “.-“, “b” maps to “-…”, “c” maps to “-.-.”, and so on.   F">
@@ -186,7 +186,24 @@
 <li>Each words[i] will have length in range [1, 12].</li>
 <li>words[i] will only consist of lowercase letters.  </li>
 </ul>
-<h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><p>使用vector队列存储字母的摩斯电码，使用set的不存储重复项的特点存储经过翻译的摩斯电码，直接输出set的容器含量就是需要的答案。</p>
+<pre><code class="c++"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> {</span>
+<span class="keyword">public</span>:
+    <span class="function"><span class="keyword">int</span> <span class="title">uniqueMorseRepresentations</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; words)</span> </span>{
+        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; reference={<span class="string">".-"</span>,<span class="string">"-..."</span>,<span class="string">"-.-."</span>,<span class="string">"-.."</span>,<span class="string">"."</span>,<span class="string">"..-."</span>,<span class="string">"--."</span>,<span class="string">"...."</span>,<span class="string">".."</span>,<span class="string">".---"</span>,<span class="string">"-.-"</span>,<span class="string">".-.."</span>,<span class="string">"--"</span>,<span class="string">"-."</span>,<span class="string">"---"</span>,<span class="string">".--."</span>,<span class="string">"--.-"</span>,<span class="string">".-."</span>,<span class="string">"..."</span>,<span class="string">"-"</span>,<span class="string">"..-"</span>,<span class="string">"...-"</span>,<span class="string">".--"</span>,<span class="string">"-..-"</span>,<span class="string">"-.--"</span>,<span class="string">"--.."</span>};
+        <span class="built_in">set</span>&lt;<span class="built_in">string</span>&gt; out;
+        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; words.size(); i++){
+            <span class="built_in">string</span> temp = <span class="string">""</span>;
+            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; words[i].size(); j++){
+                temp += reference[words[i][j]-<span class="string">'a'</span>];
+            }
+            out.insert(temp);
+        }
+        <span class="keyword">return</span> out.size();
+    }
+};
+</code></pre>
+
       
 
       
