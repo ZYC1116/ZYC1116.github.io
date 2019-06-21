@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="RootUShaw">
 <meta property="og:description" content="##问题描述：Given two binary trees, write a function to check if they are the same or not. Two binary trees are considered the same if they are structurally identical and the nodes have the same value. Exa">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-10T08:55:42.172Z">
+<meta property="og:updated_time" content="2019-04-10T09:03:27.686Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode 100. Same Tree">
 <meta name="twitter:description" content="##问题描述：Given two binary trees, write a function to check if they are the same or not. Two binary trees are considered the same if they are structurally identical and the nodes have the same value. Exa">
@@ -177,17 +177,8 @@
       
         <p>##问题描述：<br>Given two binary trees, write a function to check if they are the same or not.</p>
 <p>Two binary trees are considered the same if they are structurally identical and the nodes have the same value.</p>
-<p>Example 1:</p>
-<p>Input:     1         1<br>          / \       / \<br>         2   3     2   3</p>
-<pre><code>[1,2,3],   [1,2,3]
-</code></pre><p>Output: true<br>Example 2:</p>
-<p>Input:     1         1<br>          /           \<br>         2             2</p>
-<pre><code>[1,2],     [1,null,2]
-</code></pre><p>Output: false<br>Example 3:</p>
-<p>Input:     1         1<br>          / \       / \<br>         2   1     1   2</p>
-<pre><code>[1,2,1],   [1,1,2]
-</code></pre><p>Output: false</p>
-<h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><p>主要是解题方式，如果全为负数，一定是返回最大的那个负数，否则就是从某个正数开始的那个序列的和最大，感觉是智力题？auto关键字是自动识别类型。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">auto</span> maxp = max_element(nums.begin(), nums.end());</span><br><span class="line">        <span class="keyword">if</span>(*maxp &lt; <span class="number">0</span>) <span class="keyword">return</span> *maxp;</span><br><span class="line">        <span class="keyword">int</span> maxNum = INT_MIN;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            sum = max(<span class="number">0</span>, sum + nums[i]);</span><br><span class="line">            maxNum = max(maxNum, sum);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxNum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example:</strong><br><strong>Input:</strong><br>&nbsp;&nbsp;&nbsp;1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1<br>&nbsp; / \   &nbsp;&nbsp; &nbsp;   / \<br>&nbsp;2   3   &nbsp;&nbsp;&nbsp;&nbsp;  2   3<br>[1,2,3],   [1,2,3]<br><strong>Output:</strong> true</p>
+<h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><p>判断两个树是否相等，通过中序遍历实现，因为是使用迭代的方式，所以时间性能比较差，用堆栈解决应该会更快些。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSameTree</span><span class="params">(TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">bool</span> flag = <span class="literal">true</span>;</span><br><span class="line">        Traversal(p, q, flag);</span><br><span class="line">        <span class="keyword">return</span> flag;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Traversal</span><span class="params">(TreeNode *p, TreeNode *q, <span class="keyword">bool</span> &amp;flag)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!p &amp;&amp; !q) <span class="keyword">return</span>;   <span class="comment">//no node</span></span><br><span class="line">        <span class="keyword">if</span>(p &amp;&amp; !q || !p &amp;&amp; q || p-&gt;val != q-&gt;val)&#123;</span><br><span class="line">            flag = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Traversal(p-&gt;left,q-&gt;left,flag);    <span class="comment">//中序遍历，中左右</span></span><br><span class="line">        <span class="keyword">if</span>(!flag) <span class="keyword">return</span>;</span><br><span class="line">        Traversal(p-&gt;right,q-&gt;right,flag);</span><br><span class="line">        <span class="keyword">if</span>(!flag) <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -291,6 +282,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/04/10/Leetcode-101-Symmetric-Tree/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Leetcode 101. Symmetric Tree
+        
+      </div>
+    </a>
   
   
     <a href="/2019/04/01/Leetcode-88-Merge-Sorted-Array/" id="article-nav-older" class="article-nav-link-wrap">

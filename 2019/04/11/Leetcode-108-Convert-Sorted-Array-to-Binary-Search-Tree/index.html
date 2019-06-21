@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Leetcode 1. Two Sum | RootUShaw</title>
+  <title>Leetcode 108. Convert Sorted Array to Binary Search Tree | RootUShaw</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题描述：Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the s">
+  <meta name="description" content="问题描述：Given an array where elements are sorted in ascending order, convert it to a height balanced BST. For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of">
 <meta name="keywords" content="Leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode 1. Two Sum">
-<meta property="og:url" content="http://yoursite.com/2019/03/26/Leetcode-1-Two-Sum/index.html">
+<meta property="og:title" content="Leetcode 108. Convert Sorted Array to Binary Search Tree">
+<meta property="og:url" content="http://yoursite.com/2019/04/11/Leetcode-108-Convert-Sorted-Array-to-Binary-Search-Tree/index.html">
 <meta property="og:site_name" content="RootUShaw">
-<meta property="og:description" content="问题描述：Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the s">
+<meta property="og:description" content="问题描述：Given an array where elements are sorted in ascending order, convert it to a height balanced BST. For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-21T02:01:49.942Z">
+<meta property="og:updated_time" content="2019-04-11T02:59:53.928Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode 1. Two Sum">
-<meta name="twitter:description" content="问题描述：Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the s">
+<meta name="twitter:title" content="Leetcode 108. Convert Sorted Array to Binary Search Tree">
+<meta name="twitter:description" content="问题描述：Given an array where elements are sorted in ascending order, convert it to a height balanced BST. For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of">
   
     <link rel="alternative" href="/atom.xml" title="RootUShaw" type="application/atom+xml">
   
@@ -155,33 +155,32 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Leetcode-1-Two-Sum" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Leetcode-108-Convert-Sorted-Array-to-Binary-Search-Tree" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Leetcode 1. Two Sum
+      Leetcode 108. Convert Sorted Array to Binary Search Tree
     </h1>
   
 
         
-        <a href="/2019/03/26/Leetcode-1-Two-Sum/" class="archive-article-date">
-  	<time datetime="2019-03-26T06:52:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-26</time>
+        <a href="/2019/04/11/Leetcode-108-Convert-Sorted-Array-to-Binary-Search-Tree/" class="archive-article-date">
+  	<time datetime="2019-04-11T02:56:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h2><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
-<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
-<p><strong>Example:</strong><br>Given nums = [2, 7, 11, 15], target = 9,</p>
-<p>Because nums[0] + nums[1] = 2 + 7 = 9,<br>return [0, 1].</p>
-<h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><p>C++粗暴解，直接计算两两的和<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; out;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt;nums.size(); j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>((nums[i]+nums[j]) == target)&#123;</span><br><span class="line">                    out.push_back(i);</span><br><span class="line">                    out.push_back(j);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> out;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>JS dict将nums索引和数值的位置进行了转换，in运算符的作用是判断属性是否存在于对象中，对于数组来说，索引号就是属性。用object.exists(key)方法也可以</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; target</span></span><br><span class="line"><span class="comment"> * @return &#123;number[]&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> twoSum = <span class="function"><span class="keyword">function</span>(<span class="params">nums, target</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> dict = &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;nums.length; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(target-nums[i] <span class="keyword">in</span> dict)&#123;</span><br><span class="line">            <span class="keyword">return</span> [dict[target-nums[i]], i];</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            dict[nums[i]]=i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+        <h2 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h2><p>Given an array where elements are sorted in ascending order, convert it to a height balanced BST.</p>
+<p>For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.</p>
+<p><strong>Example:</strong></p>
+<p>Given the sorted array: [-10,-3,0,5,9],</p>
+<p>One possible answer is: [0,-3,9,-10,null,5], which represents the following height balanced BST</p>
+<h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><p>创建一个高度平衡的二叉排序树，给定序列是已经排好序的，还原这个树顺便遍历就可以了<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">sortedArrayToBST</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> dfs(nums, <span class="number">0</span>, nums.size()<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">TreeNode* <span class="title">dfs</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(l &gt; r) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">        TreeNode *root = <span class="keyword">new</span> TreeNode(nums[mid]);</span><br><span class="line">        root -&gt; left = dfs(nums, l, mid <span class="number">-1</span>);</span><br><span class="line">        root -&gt; right = dfs(nums, mid + <span class="number">1</span>, r);</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -272,7 +271,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/26/Leetcode-1-Two-Sum/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/11/Leetcode-108-Convert-Sorted-Array-to-Binary-Search-Tree/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -286,18 +285,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/03/27/Leetcode-7-Reverse-Integer/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Leetcode 7. Reverse Integer
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/03/26/Leetcode-657-Robot-Return-to-Origin/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Leetcode 657. Robot Return to Origin</div>
+    <a href="/2019/04/11/Leetcode-107-Binary-Tree-Level-Order-Traversal-II/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Leetcode 107. Binary Tree Level Order Traversal II</div>
       <i class="icon-circle-right"></i>
     </a>
   
