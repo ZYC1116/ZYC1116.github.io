@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>小萌新的第一篇博文 | RootUShaw</title>
+  <title>Leetcode 26. Remove Duplicates from Sorted Array | RootUShaw</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是我的小博客，使用hexo+github搭建，主要用于记录前端学习和Leetcode刷题~">
+  <meta name="description" content="问题描述：Given a sorted array nums, remove the duplicates in-place such that each element appear only once and return the new length. Do not allocate extra space for another array, you must do this by mod">
+<meta name="keywords" content="Leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小萌新的第一篇博文">
-<meta property="og:url" content="http://yoursite.com/2018/09/19/小萌新的第一篇博文/index.html">
+<meta property="og:title" content="Leetcode 26. Remove Duplicates from Sorted Array">
+<meta property="og:url" content="http://yoursite.com/2019/03/29/Leetcode-26-Remove-Duplicates-from-Sorted-Array/index.html">
 <meta property="og:site_name" content="RootUShaw">
-<meta property="og:description" content="这是我的小博客，使用hexo+github搭建，主要用于记录前端学习和Leetcode刷题~">
+<meta property="og:description" content="问题描述：Given a sorted array nums, remove the duplicates in-place such that each element appear only once and return the new length. Do not allocate extra space for another array, you must do this by mod">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-30T12:53:37.941Z">
+<meta property="og:updated_time" content="2019-03-29T02:05:23.325Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小萌新的第一篇博文">
-<meta name="twitter:description" content="这是我的小博客，使用hexo+github搭建，主要用于记录前端学习和Leetcode刷题~">
+<meta name="twitter:title" content="Leetcode 26. Remove Duplicates from Sorted Array">
+<meta name="twitter:description" content="问题描述：Given a sorted array nums, remove the duplicates in-place such that each element appear only once and return the new length. Do not allocate extra space for another array, you must do this by mod">
   
     <link rel="alternative" href="/atom.xml" title="RootUShaw" type="application/atom+xml">
   
@@ -154,27 +155,41 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-小萌新的第一篇博文" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Leetcode-26-Remove-Duplicates-from-Sorted-Array" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      小萌新的第一篇博文
+      Leetcode 26. Remove Duplicates from Sorted Array
     </h1>
   
 
         
-        <a href="/2018/09/19/小萌新的第一篇博文/" class="archive-article-date">
-  	<time datetime="2018-09-19T11:44:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-19</time>
+        <a href="/2019/03/29/Leetcode-26-Remove-Duplicates-from-Sorted-Array/" class="archive-article-date">
+  	<time datetime="2019-03-29T02:01:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-29</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>  这是我的小博客，使用hexo+github搭建，主要用于记录前端学习和Leetcode刷题~</p>
+        <h2 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h2><p>Given a sorted array nums, remove the duplicates in-place such that each element appear only once and return the new length.</p>
+<p>Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.</p>
+<p><strong>Example 1:</strong><br>Given nums = <strong>[1,1,2]</strong>,</p>
+<p>Your function should return length = <strong>2</strong>, with the first two elements of nums being 1 and 2 respectively.</p>
+<p>It doesn’t matter what you leave beyond the returned length.</p>
+<p><strong>Example 2:</strong><br>Given nums = <strong>[0,0,1,1,1,2,2,3,3,4]</strong>,</p>
+<p>Your function should return length = <strong>5</strong>, with the first five elements of nums being modified to 0, 1, 2, 3, and 4 respectively.</p>
+<p>It doesn’t matter what values are set beyond the returned length.</p>
+<p><strong>Clarification:</strong></p>
+<p>Confused why the returned value is an integer but your answer is an array?</p>
+<p>Note that the input array is passed in by reference, which means modification to the input array will be known to the caller as well.</p>
+<p>Internally you can think of this:</p>
+<p>// nums is passed in by reference. (i.e., without making a copy)<br>int len = removeDuplicates(nums);</p>
+<p>// any modification to nums in your function would be known by the caller.<br>// using the length returned by your function, it prints the first len elements.<br>for (int i = 0; i &lt; len; i++) {<br>    print(nums[i]);<br>}</p>
+<h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><p>注意题中要求对原数组也进行改变，并且要考虑输入为空的情况。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] != nums[i<span class="number">-1</span>]) count++;</span><br><span class="line">            nums[count] = nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums.size() == <span class="number">0</span> ? <span class="number">0</span> : (count + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -204,6 +219,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Leetcode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -254,7 +280,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/09/19/小萌新的第一篇博文/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/29/Leetcode-26-Remove-Duplicates-from-Sorted-Array/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -268,15 +294,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/20/Leetcode-771-Jewels-and-Stones/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/03/29/Leetcode-27-Remove-Element/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Leetcode 771.Jewels and Stones
+          Leetcode 27. Remove Element
         
       </div>
     </a>
   
+  
+    <a href="/2019/03/28/Leetcode-21-Merge-Two-Sorted-Lists/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Leetcode 21. Merge Two Sorted Lists</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 

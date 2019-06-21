@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>小萌新的第一篇博文 | RootUShaw</title>
+  <title>Leetcode-929-Unique-Email-Adresses | RootUShaw</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是我的小博客，使用hexo+github搭建，主要用于记录前端学习和Leetcode刷题~">
+  <meta name="description" content="问题描述：Every email consists of a local name and a domain name, separated by the @ sign. For example, in alice@leetcode.com, alice is the local name, and leetcode.com is the domain name. Besides lowercas">
+<meta name="keywords" content="Leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小萌新的第一篇博文">
-<meta property="og:url" content="http://yoursite.com/2018/09/19/小萌新的第一篇博文/index.html">
+<meta property="og:title" content="Leetcode-929-Unique-Email-Adresses">
+<meta property="og:url" content="http://yoursite.com/2019/03/25/Leetcode-929-Unique-Email-Adresses/index.html">
 <meta property="og:site_name" content="RootUShaw">
-<meta property="og:description" content="这是我的小博客，使用hexo+github搭建，主要用于记录前端学习和Leetcode刷题~">
+<meta property="og:description" content="问题描述：Every email consists of a local name and a domain name, separated by the @ sign. For example, in alice@leetcode.com, alice is the local name, and leetcode.com is the domain name. Besides lowercas">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-30T12:53:37.941Z">
+<meta property="og:updated_time" content="2019-03-25T07:53:24.692Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小萌新的第一篇博文">
-<meta name="twitter:description" content="这是我的小博客，使用hexo+github搭建，主要用于记录前端学习和Leetcode刷题~">
+<meta name="twitter:title" content="Leetcode-929-Unique-Email-Adresses">
+<meta name="twitter:description" content="问题描述：Every email consists of a local name and a domain name, separated by the @ sign. For example, in alice@leetcode.com, alice is the local name, and leetcode.com is the domain name. Besides lowercas">
   
     <link rel="alternative" href="/atom.xml" title="RootUShaw" type="application/atom+xml">
   
@@ -154,27 +155,66 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-小萌新的第一篇博文" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Leetcode-929-Unique-Email-Adresses" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      小萌新的第一篇博文
+      Leetcode-929-Unique-Email-Adresses
     </h1>
   
 
         
-        <a href="/2018/09/19/小萌新的第一篇博文/" class="archive-article-date">
-  	<time datetime="2018-09-19T11:44:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-19</time>
+        <a href="/2019/03/25/Leetcode-929-Unique-Email-Adresses/" class="archive-article-date">
+  	<time datetime="2019-03-25T07:30:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>  这是我的小博客，使用hexo+github搭建，主要用于记录前端学习和Leetcode刷题~</p>
+        <h2 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h2><p>Every email consists of a local name and a domain name, separated by the @ sign.</p>
+<p>For example, in <a href="mailto:alice@leetcode.com" target="_blank" rel="noopener">alice@leetcode.com</a>, alice is the local name, and leetcode.com is the domain name.</p>
+<p>Besides lowercase letters, these emails may contain ‘.’s or ‘+’s.</p>
+<p>If you add periods (‘.’) between some characters in the local name part of an email address, mail sent there will be forwarded to the same address without dots in the local name.  For example, “<a href="mailto:alice.z@leetcode.com" target="_blank" rel="noopener">alice.z@leetcode.com</a>“ and “<a href="mailto:alicez@leetcode.com" target="_blank" rel="noopener">alicez@leetcode.com</a>“ forward to the same email address.  (Note that this rule does not apply for domain names.)</p>
+<p>If you add a plus (‘+’) in the local name, everything after the first plus sign will be ignored. This allows certain emails to be filtered, for example <a href="mailto:m.y+name@email.com" target="_blank" rel="noopener">m.y+name@email.com</a> will be forwarded to <a href="mailto:my@email.com" target="_blank" rel="noopener">my@email.com</a>.  (Again, this rule does not apply for domain names.)</p>
+<p>It is possible to use both of these rules at the same time.</p>
+<p>Given a list of emails, we send one email to each address in the list.  How many different addresses actually receive mails? </p>
+<p><strong>Example:</strong><br><strong>Input: </strong><br>[“<a href="mailto:test.email+alex@leetcode.com" target="_blank" rel="noopener">test.email+alex@leetcode.com</a>“,”<a href="mailto:test.e.mail+bob.cathy@leetcode.com" target="_blank" rel="noopener">test.e.mail+bob.cathy@leetcode.com</a>“,”<a href="mailto:testemail+david@lee.tcode.com" target="_blank" rel="noopener">testemail+david@lee.tcode.com</a>“]</p>
+<p><strong>Output:</strong> 2<br><strong>Explanation: </strong><br>“<a href="mailto:testemail@leetcode.com" target="_blank" rel="noopener">testemail@leetcode.com</a>“ and “<a href="mailto:testemail@lee.tcode.com" target="_blank" rel="noopener">testemail@lee.tcode.com</a>“ actually receive mails </p>
+<p><strong>Note:</strong></p>
+<ul>
+<li>1 &lt;= emails[i].length &lt;= 100</li>
+<li>1 &lt;= emails.length &lt;= 100</li>
+<li>Each emails[i] contains exactly one ‘@’ character.</li>
+</ul>
+<h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><p>就是简单的排除法，各个情况考虑进去就可以了。但是时间性能不是很好。可以尝试使用string的函数进行改进。先获取到@前后的部分以及@的位置。然后直接将+后的部分remove就可以</p>
+<pre><code class="c++"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> {</span>
+<span class="keyword">public</span>:
+    <span class="function"><span class="keyword">int</span> <span class="title">numUniqueEmails</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; emails)</span> </span>{
+        <span class="built_in">set</span>&lt;<span class="built_in">string</span>&gt; out;
+        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; emails.size(); i++){
+            <span class="built_in">string</span> temp = <span class="string">""</span>;
+            <span class="keyword">bool</span> signal = <span class="literal">false</span>;
+            <span class="keyword">bool</span> aite = <span class="literal">false</span>;
+            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; emails[i].size(); j++){
+                <span class="keyword">if</span>(aite) temp+=emails[i][j];
+                <span class="keyword">else</span> <span class="keyword">if</span>(emails[i][j]==<span class="string">'@'</span>){
+                    temp+=emails[i][j];
+                    aite = <span class="literal">true</span>;
+                }
+                <span class="keyword">else</span> <span class="keyword">if</span>(signal||emails[i][j]==<span class="string">'.'</span>) <span class="keyword">continue</span>;
+                <span class="keyword">else</span> <span class="keyword">if</span>(emails[i][j]==<span class="string">'+'</span>) signal = <span class="literal">true</span>;
+                <span class="keyword">else</span> temp+=emails[i][j];
+            }
+            out.insert(temp);
+        }
+        <span class="keyword">return</span> out.size();
+    }
+};
+</code></pre>
 
       
 
@@ -204,6 +244,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Leetcode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -254,7 +305,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/09/19/小萌新的第一篇博文/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/25/Leetcode-929-Unique-Email-Adresses/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -268,15 +319,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/20/Leetcode-771-Jewels-and-Stones/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/03/25/Leetcode-961-N-Repeated-Element-in-Size-2N-Array/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Leetcode 771.Jewels and Stones
+          Leetcode-961. N-Repeated Element in Size 2N Array
         
       </div>
     </a>
   
+  
+    <a href="/2018/09/21/Leetcode-804-Unique-Morse-Code-Words/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Leetcode 804.Unique Morse Code Words</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 

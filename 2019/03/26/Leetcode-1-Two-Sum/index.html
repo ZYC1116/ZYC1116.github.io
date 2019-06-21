@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>小萌新的第一篇博文 | RootUShaw</title>
+  <title>Leetcode 1. Two Sum | RootUShaw</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是我的小博客，使用hexo+github搭建，主要用于记录前端学习和Leetcode刷题~">
+  <meta name="description" content="问题描述：Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the s">
+<meta name="keywords" content="Leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小萌新的第一篇博文">
-<meta property="og:url" content="http://yoursite.com/2018/09/19/小萌新的第一篇博文/index.html">
+<meta property="og:title" content="Leetcode 1. Two Sum">
+<meta property="og:url" content="http://yoursite.com/2019/03/26/Leetcode-1-Two-Sum/index.html">
 <meta property="og:site_name" content="RootUShaw">
-<meta property="og:description" content="这是我的小博客，使用hexo+github搭建，主要用于记录前端学习和Leetcode刷题~">
+<meta property="og:description" content="问题描述：Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the s">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-30T12:53:37.941Z">
+<meta property="og:updated_time" content="2019-03-26T06:55:22.895Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小萌新的第一篇博文">
-<meta name="twitter:description" content="这是我的小博客，使用hexo+github搭建，主要用于记录前端学习和Leetcode刷题~">
+<meta name="twitter:title" content="Leetcode 1. Two Sum">
+<meta name="twitter:description" content="问题描述：Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the s">
   
     <link rel="alternative" href="/atom.xml" title="RootUShaw" type="application/atom+xml">
   
@@ -154,27 +155,31 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-小萌新的第一篇博文" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Leetcode-1-Two-Sum" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      小萌新的第一篇博文
+      Leetcode 1. Two Sum
     </h1>
   
 
         
-        <a href="/2018/09/19/小萌新的第一篇博文/" class="archive-article-date">
-  	<time datetime="2018-09-19T11:44:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-19</time>
+        <a href="/2019/03/26/Leetcode-1-Two-Sum/" class="archive-article-date">
+  	<time datetime="2019-03-26T06:52:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>  这是我的小博客，使用hexo+github搭建，主要用于记录前端学习和Leetcode刷题~</p>
+        <h2 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h2><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
+<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
+<p><strong>Example:</strong><br>Given nums = [2, 7, 11, 15], target = 9,</p>
+<p>Because nums[0] + nums[1] = 2 + 7 = 9,<br>return [0, 1].</p>
+<h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><p>粗暴解，直接计算两两的和<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; out;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt;nums.size(); j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>((nums[i]+nums[j]) == target)&#123;</span><br><span class="line">                    out.push_back(i);</span><br><span class="line">                    out.push_back(j);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> out;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -204,6 +209,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Leetcode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -254,7 +270,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/09/19/小萌新的第一篇博文/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/26/Leetcode-1-Two-Sum/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -268,15 +284,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/20/Leetcode-771-Jewels-and-Stones/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/03/27/Leetcode-7-Reverse-Integer/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Leetcode 771.Jewels and Stones
+          Leetcode 7. Reverse Integer
         
       </div>
     </a>
   
+  
+    <a href="/2019/03/26/Leetcode-657-Robot-Return-to-Origin/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Leetcode 657. Robot Return to Origin</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 

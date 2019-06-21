@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>小萌新的第一篇博文 | RootUShaw</title>
+  <title>Leetcode 13. Roman to Integer | RootUShaw</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是我的小博客，使用hexo+github搭建，主要用于记录前端学习和Leetcode刷题~">
+  <meta name="description" content="问题描述：Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M. Symbol       ValueI             1V             5X             10L             50C             100D             5">
+<meta name="keywords" content="Leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小萌新的第一篇博文">
-<meta property="og:url" content="http://yoursite.com/2018/09/19/小萌新的第一篇博文/index.html">
+<meta property="og:title" content="Leetcode 13. Roman to Integer">
+<meta property="og:url" content="http://yoursite.com/2019/03/27/Leetcode-13-Roman-to-Integer/index.html">
 <meta property="og:site_name" content="RootUShaw">
-<meta property="og:description" content="这是我的小博客，使用hexo+github搭建，主要用于记录前端学习和Leetcode刷题~">
+<meta property="og:description" content="问题描述：Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M. Symbol       ValueI             1V             5X             10L             50C             100D             5">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-30T12:53:37.941Z">
+<meta property="og:updated_time" content="2019-03-27T13:10:17.129Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小萌新的第一篇博文">
-<meta name="twitter:description" content="这是我的小博客，使用hexo+github搭建，主要用于记录前端学习和Leetcode刷题~">
+<meta name="twitter:title" content="Leetcode 13. Roman to Integer">
+<meta name="twitter:description" content="问题描述：Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M. Symbol       ValueI             1V             5X             10L             50C             100D             5">
   
     <link rel="alternative" href="/atom.xml" title="RootUShaw" type="application/atom+xml">
   
@@ -154,27 +155,37 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-小萌新的第一篇博文" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Leetcode-13-Roman-to-Integer" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      小萌新的第一篇博文
+      Leetcode 13. Roman to Integer
     </h1>
   
 
         
-        <a href="/2018/09/19/小萌新的第一篇博文/" class="archive-article-date">
-  	<time datetime="2018-09-19T11:44:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-19</time>
+        <a href="/2019/03/27/Leetcode-13-Roman-to-Integer/" class="archive-article-date">
+  	<time datetime="2019-03-27T13:02:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>  这是我的小博客，使用hexo+github搭建，主要用于记录前端学习和Leetcode刷题~</p>
+        <h2 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h2><p>Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.</p>
+<p>Symbol       Value<br>I             1<br>V             5<br>X             10<br>L             50<br>C             100<br>D             500<br>M             1000</p>
+<p>For example, two is written as II in Roman numeral, just two one’s added together. Twelve is written as, XII, which is simply X + II. The number twenty seven is written as XXVII, which is XX + V + II.</p>
+<p>Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:</p>
+<p>I can be placed before V (5) and X (10) to make 4 and 9.<br>X can be placed before L (50) and C (100) to make 40 and 90.<br>C can be placed before D (500) and M (1000) to make 400 and 900.<br>Given a roman numeral, convert it to an integer. Input is guaranteed to be within the range from 1 to 3999.</p>
+<p><strong>Example 1:</strong><br><strong>Input:</strong> “III”<br><strong>Output:</strong> 3</p>
+<p><strong>Example 2:</strong><br><strong>Input:</strong> “IV”<br><strong>Output:</strong> 4</p>
+<p><strong>Example 3:</strong><br><strong>Input:</strong> “IX”<br><strong>Output:</strong> 9</p>
+<p><strong>Example 4:</strong><br><strong>Input:</strong> “LVIII”<br><strong>Output:</strong> 58</p>
+<p><strong>Example 5:</strong><br><strong>Input:</strong> “MCMXCIV”<br><strong>Output:</strong> 1994</p>
+<h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><p>把几种情况罗列上就可以了<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">romanToInt</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> num = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> size = s.size();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i &lt; (size - <span class="number">1</span>) &amp;&amp; </span><br><span class="line">               (s[i] == <span class="string">'I'</span> &amp;&amp; (s[i+<span class="number">1</span>] == <span class="string">'V'</span>||s[i+<span class="number">1</span>] == <span class="string">'X'</span>)) ||</span><br><span class="line">               (s[i] == <span class="string">'X'</span> &amp;&amp; (s[i+<span class="number">1</span>] == <span class="string">'L'</span>||s[i+<span class="number">1</span>] == <span class="string">'C'</span>)) ||</span><br><span class="line">               (s[i] == <span class="string">'C'</span> &amp;&amp; (s[i+<span class="number">1</span>] == <span class="string">'D'</span>||s[i+<span class="number">1</span>] == <span class="string">'M'</span>)))&#123;</span><br><span class="line">                num -= roman(s[i]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                num += roman(s[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">roman</span><span class="params">(<span class="keyword">char</span> x)</span></span>&#123;</span><br><span class="line">        <span class="keyword">switch</span>(x)&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'I'</span>: 	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        	<span class="keyword">case</span> <span class="string">'V'</span>:	<span class="keyword">return</span> <span class="number">5</span>;</span><br><span class="line">        	<span class="keyword">case</span> <span class="string">'X'</span>:	<span class="keyword">return</span> <span class="number">10</span>;</span><br><span class="line">        	<span class="keyword">case</span> <span class="string">'L'</span>:	<span class="keyword">return</span> <span class="number">50</span>;</span><br><span class="line">        	<span class="keyword">case</span> <span class="string">'C'</span>:	<span class="keyword">return</span> <span class="number">100</span>;</span><br><span class="line">    		<span class="keyword">case</span> <span class="string">'D'</span>:	<span class="keyword">return</span> <span class="number">500</span>;</span><br><span class="line">    		<span class="keyword">case</span> <span class="string">'M'</span>:	<span class="keyword">return</span> <span class="number">1000</span>;</span><br><span class="line">            <span class="keyword">default</span>:	<span class="keyword">return</span> <span class="number">0</span>;  </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -204,6 +215,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Leetcode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -254,7 +276,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/09/19/小萌新的第一篇博文/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/27/Leetcode-13-Roman-to-Integer/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -268,15 +290,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/20/Leetcode-771-Jewels-and-Stones/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/03/28/Leetcode-14-Longest-Common-Prefix/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Leetcode 771.Jewels and Stones
+          Leetcode 14. Longest Common Prefix
         
       </div>
     </a>
   
+  
+    <a href="/2019/03/27/Leetcode-9-Palindrome-Number/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Leetcode 9. Palindrome Number</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 

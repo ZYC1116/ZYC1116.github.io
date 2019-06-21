@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>小萌新的第一篇博文 | RootUShaw</title>
+  <title>Leetcode 70. Climbing Stairs | RootUShaw</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是我的小博客，使用hexo+github搭建，主要用于记录前端学习和Leetcode刷题~">
+  <meta name="description" content="问题描述You are climbing a stair case. It takes n steps to reach to the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top? Note: Given n will be a positi">
+<meta name="keywords" content="Leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小萌新的第一篇博文">
-<meta property="og:url" content="http://yoursite.com/2018/09/19/小萌新的第一篇博文/index.html">
+<meta property="og:title" content="Leetcode 70. Climbing Stairs">
+<meta property="og:url" content="http://yoursite.com/2019/04/01/Leetcode-70-Climbing-Stairs/index.html">
 <meta property="og:site_name" content="RootUShaw">
-<meta property="og:description" content="这是我的小博客，使用hexo+github搭建，主要用于记录前端学习和Leetcode刷题~">
+<meta property="og:description" content="问题描述You are climbing a stair case. It takes n steps to reach to the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top? Note: Given n will be a positi">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-30T12:53:37.941Z">
+<meta property="og:updated_time" content="2019-04-01T13:41:50.445Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小萌新的第一篇博文">
-<meta name="twitter:description" content="这是我的小博客，使用hexo+github搭建，主要用于记录前端学习和Leetcode刷题~">
+<meta name="twitter:title" content="Leetcode 70. Climbing Stairs">
+<meta name="twitter:description" content="问题描述You are climbing a stair case. It takes n steps to reach to the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top? Note: Given n will be a positi">
   
     <link rel="alternative" href="/atom.xml" title="RootUShaw" type="application/atom+xml">
   
@@ -154,27 +155,41 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-小萌新的第一篇博文" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Leetcode-70-Climbing-Stairs" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      小萌新的第一篇博文
+      Leetcode 70. Climbing Stairs
     </h1>
   
 
         
-        <a href="/2018/09/19/小萌新的第一篇博文/" class="archive-article-date">
-  	<time datetime="2018-09-19T11:44:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-19</time>
+        <a href="/2019/04/01/Leetcode-70-Climbing-Stairs/" class="archive-article-date">
+  	<time datetime="2019-04-01T12:46:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>  这是我的小博客，使用hexo+github搭建，主要用于记录前端学习和Leetcode刷题~</p>
+        <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>You are climbing a stair case. It takes n steps to reach to the top.</p>
+<p>Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?</p>
+<p>Note: Given n will be a positive integer.</p>
+<p><strong>Example 1:</strong><br><strong>Input:</strong> 2<br><strong>Output:</strong> 2<br><strong>Explanation: </strong>There are two ways to climb to the top.</p>
+<ol>
+<li>1 step + 1 step</li>
+<li>2 steps</li>
+</ol>
+<p><strong>Example 2:</strong><br><strong>Input: </strong>3<br><strong>Output:</strong> 3<br><strong>Explanation:</strong> There are three ways to climb to the top.</p>
+<ol>
+<li>1 step + 1 step + 1 step</li>
+<li>1 step + 2 steps</li>
+<li>2 steps + 1 step</li>
+</ol>
+<h2 id="解题方法"><a href="#解题方法" class="headerlink" title="解题方法"></a>解题方法</h2><p>找规律，契波那契数列。用递推函数会超时。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">2</span>) <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">int</span> out = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> first = <span class="number">1</span>, second = <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">3</span>; i &lt;= n; i++)&#123;</span><br><span class="line">                out = first + second;</span><br><span class="line">                first = second;</span><br><span class="line">                second = out;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> out;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">int Fibonacci(int n)&#123;</span></span><br><span class="line"><span class="comment">        if(n == 0 || n == 1) return 1;</span></span><br><span class="line"><span class="comment">        else return Fibonacci(n-1) + Fibonacci(n-2);</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -204,6 +219,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Leetcode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -254,7 +280,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/09/19/小萌新的第一篇博文/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/01/Leetcode-70-Climbing-Stairs/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -268,15 +294,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/20/Leetcode-771-Jewels-and-Stones/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/04/01/Leetcode-83-Remove-Duplicates-from-Sorted-List/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Leetcode 771.Jewels and Stones
+          Leetcode 83. Remove Duplicates from Sorted List
         
       </div>
     </a>
   
+  
+    <a href="/2019/04/01/Leetcode-69-Sqrt-x/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Leetcode 69. Sqrt(x)</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 

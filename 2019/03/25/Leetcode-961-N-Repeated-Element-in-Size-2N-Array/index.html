@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>小萌新的第一篇博文 | RootUShaw</title>
+  <title>Leetcode-961. N-Repeated Element in Size 2N Array | RootUShaw</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是我的小博客，使用hexo+github搭建，主要用于记录前端学习和Leetcode刷题~">
+  <meta name="description" content="问题描述：In a array A of size 2N, there are N+1 unique elements, and exactly one of these elements is repeated N times. Return the element repeated N times. Example 1:Input: [1,2,3,3]Output: 3 Example 2:I">
+<meta name="keywords" content="Leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小萌新的第一篇博文">
-<meta property="og:url" content="http://yoursite.com/2018/09/19/小萌新的第一篇博文/index.html">
+<meta property="og:title" content="Leetcode-961. N-Repeated Element in Size 2N Array">
+<meta property="og:url" content="http://yoursite.com/2019/03/25/Leetcode-961-N-Repeated-Element-in-Size-2N-Array/index.html">
 <meta property="og:site_name" content="RootUShaw">
-<meta property="og:description" content="这是我的小博客，使用hexo+github搭建，主要用于记录前端学习和Leetcode刷题~">
+<meta property="og:description" content="问题描述：In a array A of size 2N, there are N+1 unique elements, and exactly one of these elements is repeated N times. Return the element repeated N times. Example 1:Input: [1,2,3,3]Output: 3 Example 2:I">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-30T12:53:37.941Z">
+<meta property="og:updated_time" content="2019-03-25T08:17:44.953Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小萌新的第一篇博文">
-<meta name="twitter:description" content="这是我的小博客，使用hexo+github搭建，主要用于记录前端学习和Leetcode刷题~">
+<meta name="twitter:title" content="Leetcode-961. N-Repeated Element in Size 2N Array">
+<meta name="twitter:description" content="问题描述：In a array A of size 2N, there are N+1 unique elements, and exactly one of these elements is repeated N times. Return the element repeated N times. Example 1:Input: [1,2,3,3]Output: 3 Example 2:I">
   
     <link rel="alternative" href="/atom.xml" title="RootUShaw" type="application/atom+xml">
   
@@ -154,27 +155,56 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-小萌新的第一篇博文" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Leetcode-961-N-Repeated-Element-in-Size-2N-Array" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      小萌新的第一篇博文
+      Leetcode-961. N-Repeated Element in Size 2N Array
     </h1>
   
 
         
-        <a href="/2018/09/19/小萌新的第一篇博文/" class="archive-article-date">
-  	<time datetime="2018-09-19T11:44:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-19</time>
+        <a href="/2019/03/25/Leetcode-961-N-Repeated-Element-in-Size-2N-Array/" class="archive-article-date">
+  	<time datetime="2019-03-25T08:15:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>  这是我的小博客，使用hexo+github搭建，主要用于记录前端学习和Leetcode刷题~</p>
+        <h2 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h2><p>In a array A of size 2N, there are N+1 unique elements, and exactly one of these elements is repeated N times.</p>
+<p>Return the element repeated N times.</p>
+<p><strong>Example 1:</strong><br><strong>Input: </strong>[1,2,3,3]<br><strong>Output:</strong> 3</p>
+<p><strong>Example 2:</strong><br><strong>Input: </strong>[2,1,2,5,3,2]<br><strong>Output:</strong> 2</p>
+<p><strong>Example 3:</strong><br><strong>Input: </strong>[5,1,5,2,5,3,5,4]<br><strong>Output:</strong> 5</p>
+<p><strong>Note:</strong></p>
+<ul>
+<li>4 &lt;= A.length &lt;= 10000</li>
+<li>0 &lt;= A[i] &lt; 10000</li>
+<li>A.length is even</li>
+</ul>
+<h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><p>使用hash用作索引的方式</p>
+<pre><code class="c++"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> {</span>
+<span class="keyword">public</span>:
+    <span class="function"><span class="keyword">int</span> <span class="title">repeatedNTimes</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; A)</span> </span>{
+        <span class="keyword">int</span> hashx[<span class="number">10001</span>]={<span class="number">0</span>};
+        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; A.size(); i++){
+            hashx[(A[i])]++;
+        }
+        <span class="keyword">int</span> out, x = A.size()/<span class="number">2</span>;
+        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10001</span>; i++){
+            <span class="keyword">if</span>(hashx[i] == x){
+                out = i;
+                <span class="keyword">break</span>;
+            }
+        }
+        <span class="keyword">return</span> out;
+    }
+};
+</code></pre>
 
       
 
@@ -204,6 +234,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Leetcode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -254,7 +295,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/09/19/小萌新的第一篇博文/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/25/Leetcode-961-N-Repeated-Element-in-Size-2N-Array/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -268,15 +309,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/09/20/Leetcode-771-Jewels-and-Stones/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/03/26/Leetcode-977-Squares-of-a-Sorted-Array/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Leetcode 771.Jewels and Stones
+          Leetcode 977. Squares of a Sorted Array
         
       </div>
     </a>
   
+  
+    <a href="/2019/03/25/Leetcode-929-Unique-Email-Adresses/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Leetcode-929-Unique-Email-Adresses</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
