@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Leetcode 88. Merge Sorted Array | RootUShaw</title>
+  <title>JS数组基础 | RootUShaw</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题描述Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array. Note:The number of elements initialized in nums1 and nums2 are m and n respectively.You may assume that">
-<meta name="keywords" content="Leetcode">
+  <meta name="description" content="数组基础方法1、创建数组  Array构造器：var arr = new Array()； 数组字面量：var arr = [1, 2, 2]；  2、检测数组  instanceof（适合在全局作用域）：if（value instanceof Array）或者确定某个对象是不是数组。  Array.isArray()：确定每个值是不是数组   3、转换  toString()：返回以逗号分隔的字">
+<meta name="keywords" content="前端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode 88. Merge Sorted Array">
-<meta property="og:url" content="http://yoursite.com/2019/04/01/Leetcode-88-Merge-Sorted-Array/index.html">
+<meta property="og:title" content="JS数组基础">
+<meta property="og:url" content="http://yoursite.com/2019/06/27/JS数组基础/index.html">
 <meta property="og:site_name" content="RootUShaw">
-<meta property="og:description" content="问题描述Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array. Note:The number of elements initialized in nums1 and nums2 are m and n respectively.You may assume that">
+<meta property="og:description" content="数组基础方法1、创建数组  Array构造器：var arr = new Array()； 数组字面量：var arr = [1, 2, 2]；  2、检测数组  instanceof（适合在全局作用域）：if（value instanceof Array）或者确定某个对象是不是数组。  Array.isArray()：确定每个值是不是数组   3、转换  toString()：返回以逗号分隔的字">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-01T13:42:36.662Z">
+<meta property="og:updated_time" content="2019-06-27T06:47:38.488Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode 88. Merge Sorted Array">
-<meta name="twitter:description" content="问题描述Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array. Note:The number of elements initialized in nums1 and nums2 are m and n respectively.You may assume that">
+<meta name="twitter:title" content="JS数组基础">
+<meta name="twitter:description" content="数组基础方法1、创建数组  Array构造器：var arr = new Array()； 数组字面量：var arr = [1, 2, 2]；  2、检测数组  instanceof（适合在全局作用域）：if（value instanceof Array）或者确定某个对象是不是数组。  Array.isArray()：确定每个值是不是数组   3、转换  toString()：返回以逗号分隔的字">
   
     <link rel="alternative" href="/atom.xml" title="RootUShaw" type="application/atom+xml">
   
@@ -155,30 +155,81 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Leetcode-88-Merge-Sorted-Array" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-JS数组基础" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Leetcode 88. Merge Sorted Array
+      JS数组基础
     </h1>
   
 
         
-        <a href="/2019/04/01/Leetcode-88-Merge-Sorted-Array/" class="archive-article-date">
-  	<time datetime="2019-04-01T13:37:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-01</time>
+        <a href="/2019/06/27/JS数组基础/" class="archive-article-date">
+  	<time datetime="2019-06-27T06:30:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.</p>
-<p><strong>Note:</strong><br>The number of elements initialized in nums1 and nums2 are m and n respectively.<br>You may assume that nums1 has enough space (size that is greater or equal to m + n) to hold additional elements from nums2.</p>
-<p><strong>Example:</strong><br><strong>Input:</strong><br>nums1 = [1,2,3,0,0,0], m = 3<br>nums2 = [2,5,6],       n = 3<br><strong>Output:</strong> [1,2,2,3,5,6]</p>
-<h2 id="解题方法"><a href="#解题方法" class="headerlink" title="解题方法"></a>解题方法</h2><p>主要是过程想清楚，从后往前，把数组2的数字都填充进去。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums1, <span class="keyword">int</span> m, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums2, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> l1 = m - <span class="number">1</span>, l2 = n - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> i = m + n - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(l1 &gt;= <span class="number">0</span> &amp;&amp; l2 &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums1[l1] &gt; nums2[l2] )</span><br><span class="line">                nums1[i--] = nums1[l1--];</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                nums1[i--] = nums2[l2--];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(l2 &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">            nums1[i--] = nums2[l2--];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+        <h2 id="数组基础方法"><a href="#数组基础方法" class="headerlink" title="数组基础方法"></a>数组基础方法</h2><p>1、创建数组</p>
+<ul>
+<li>Array构造器：var arr = new Array()；</li>
+<li>数组字面量：var arr = [1, 2, 2]；</li>
+</ul>
+<p>2、检测数组</p>
+<ul>
+<li><p>instanceof（适合在全局作用域）：if（value instanceof Array）或者确定某个对象是不是数组。</p>
+</li>
+<li><p>Array.isArray()：确定每个值是不是数组</p>
+</li>
+</ul>
+<p>3、转换</p>
+<ul>
+<li>toString()：返回以逗号分隔的字符串</li>
+<li>valueOf()：返回数组</li>
+<li>toLocaleString()：把数组转换为本地字符串</li>
+<li>join()：如果传入的参数是逗号，就和toString()一样</li>
+</ul>
+<p>4、栈方法（先进后出）</p>
+<ul>
+<li>push()：插入元素</li>
+<li>pop()：移除数组末尾项并返回该项</li>
+</ul>
+<p>5、队列方法</p>
+<ul>
+<li>shift()：移除数组首项，并返回该项</li>
+<li>unshift()：在数组前端添加项，并返回数组长度</li>
+</ul>
+<p>6、重排序</p>
+<ul>
+<li>reverse()：反转</li>
+<li>sort()：按升序排列数组</li>
+</ul>
+<p>7、操作方法</p>
+<ul>
+<li>concat()：基于当前数组的所有相创建一个新数组，就是将接受到的参数全部推进去</li>
+<li>slice()：基于当前数组截取一部分拿出来创建一个新数组，参数是返回项的起始位置和结束位置，不会影响原数组</li>
+<li>splice()：始终返回一个数组，包含从原始数组中删除的项<ul>
+<li>删除：（要删除的第一项的位置，要删除的项数）</li>
+<li>插入：（起始位置，0，要插入的项）</li>
+<li>替换：（起始位置，要删除的项，要插入的项）</li>
+</ul>
+</li>
+</ul>
+<p>8、位置方法</p>
+<ul>
+<li>indexOf()：从数组前面开始找，可以接收参数（要查找的项，查找起点位置）</li>
+<li>lastIndexOf()：从数组后面开始找</li>
+</ul>
+<p>9、迭代方法</p>
+<ul>
+<li>every，filter，map，some</li>
+<li>forEach：相当于for循环</li>
+</ul>
 
       
 
@@ -213,7 +264,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Leetcode</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
         		</li>
       		
 		</ul>
@@ -269,7 +320,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/01/Leetcode-88-Merge-Sorted-Array/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/27/JS数组基础/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -283,18 +334,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/04/10/Leetcode-100-Same-Tree/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/07/01/jQuery知识点-样式篇/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Leetcode 100. Same Tree
+          jQuery知识点-样式篇
         
       </div>
     </a>
   
   
-    <a href="/2019/04/01/Leetcode-83-Remove-Duplicates-from-Sorted-List/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Leetcode 83. Remove Duplicates from Sorted List</div>
+    <a href="/2019/04/11/Leetcode-108-Convert-Sorted-Array-to-Binary-Search-Tree/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Leetcode 108. Convert Sorted Array to Binary Search Tree</div>
       <i class="icon-circle-right"></i>
     </a>
   

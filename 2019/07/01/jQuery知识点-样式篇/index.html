@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Leetcode 88. Merge Sorted Array | RootUShaw</title>
+  <title>jQuery知识点-样式篇 | RootUShaw</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题描述Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array. Note:The number of elements initialized in nums1 and nums2 are m and n respectively.You may assume that">
-<meta name="keywords" content="Leetcode">
+  <meta name="description" content="一、环境搭建只需要在标签中通过引入jQuery库即可 1234567891011&amp;lt;!DOCTYPE HTML&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;    &amp;lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&amp;gt;    &amp;lt;script type=&quot;text/javascript&quot;">
+<meta name="keywords" content="前端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode 88. Merge Sorted Array">
-<meta property="og:url" content="http://yoursite.com/2019/04/01/Leetcode-88-Merge-Sorted-Array/index.html">
+<meta property="og:title" content="jQuery知识点-样式篇">
+<meta property="og:url" content="http://yoursite.com/2019/07/01/jQuery知识点-样式篇/index.html">
 <meta property="og:site_name" content="RootUShaw">
-<meta property="og:description" content="问题描述Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array. Note:The number of elements initialized in nums1 and nums2 are m and n respectively.You may assume that">
+<meta property="og:description" content="一、环境搭建只需要在标签中通过引入jQuery库即可 1234567891011&amp;lt;!DOCTYPE HTML&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;    &amp;lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&amp;gt;    &amp;lt;script type=&quot;text/javascript&quot;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-01T13:42:36.662Z">
+<meta property="og:updated_time" content="2019-07-03T07:28:46.711Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode 88. Merge Sorted Array">
-<meta name="twitter:description" content="问题描述Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array. Note:The number of elements initialized in nums1 and nums2 are m and n respectively.You may assume that">
+<meta name="twitter:title" content="jQuery知识点-样式篇">
+<meta name="twitter:description" content="一、环境搭建只需要在标签中通过引入jQuery库即可 1234567891011&amp;lt;!DOCTYPE HTML&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;    &amp;lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&amp;gt;    &amp;lt;script type=&quot;text/javascript&quot;">
   
     <link rel="alternative" href="/atom.xml" title="RootUShaw" type="application/atom+xml">
   
@@ -155,31 +155,33 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Leetcode-88-Merge-Sorted-Array" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-jQuery知识点-样式篇" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Leetcode 88. Merge Sorted Array
+      jQuery知识点-样式篇
     </h1>
   
 
         
-        <a href="/2019/04/01/Leetcode-88-Merge-Sorted-Array/" class="archive-article-date">
-  	<time datetime="2019-04-01T13:37:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-01</time>
+        <a href="/2019/07/01/jQuery知识点-样式篇/" class="archive-article-date">
+  	<time datetime="2019-07-01T13:50:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.</p>
-<p><strong>Note:</strong><br>The number of elements initialized in nums1 and nums2 are m and n respectively.<br>You may assume that nums1 has enough space (size that is greater or equal to m + n) to hold additional elements from nums2.</p>
-<p><strong>Example:</strong><br><strong>Input:</strong><br>nums1 = [1,2,3,0,0,0], m = 3<br>nums2 = [2,5,6],       n = 3<br><strong>Output:</strong> [1,2,2,3,5,6]</p>
-<h2 id="解题方法"><a href="#解题方法" class="headerlink" title="解题方法"></a>解题方法</h2><p>主要是过程想清楚，从后往前，把数组2的数字都填充进去。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums1, <span class="keyword">int</span> m, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums2, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> l1 = m - <span class="number">1</span>, l2 = n - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> i = m + n - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(l1 &gt;= <span class="number">0</span> &amp;&amp; l2 &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums1[l1] &gt; nums2[l2] )</span><br><span class="line">                nums1[i--] = nums1[l1--];</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                nums1[i--] = nums2[l2--];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(l2 &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">            nums1[i--] = nums2[l2--];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-
+        <h2 id="一、环境搭建"><a href="#一、环境搭建" class="headerlink" title="一、环境搭建"></a>一、环境搭建</h2><p>只需要在<head>标签中通过<script>引入jQuery库即可</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE HTML&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"https://code.jquery.com/jquery-3.4.1.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>环境搭建<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"> alert($) </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>3.4.1开发者版（修改调试）：<a href="https://code.jquery.com/jquery-3.4.1.js">https://code.jquery.com/jquery-3.4.1.js</a></p>
+<p>3.4.1压缩版（体积效率）：<a href="https://code.jquery.com/jquery-3.4.1.min.js">https://code.jquery.com/jquery-3.4.1.min.js</a></p>
+<h2 id="二、jQuery对象和DOM对象"><a href="#二、jQuery对象和DOM对象" class="headerlink" title="二、jQuery对象和DOM对象"></a>二、jQuery对象和DOM对象</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://code.jquery.com/jquery-3.4.1.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 使用JS原生语法 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="comment">// 通过原生JS语法获取id为imooc1的元素p</span></span></span><br><span class="line"><span class="javascript">			<span class="keyword">var</span> p = <span class="built_in">document</span>.getElementById(<span class="string">'no1'</span>);</span></span><br><span class="line"><span class="javascript">            <span class="comment">// 将元素p在html中内容改变</span></span></span><br><span class="line"><span class="javascript">			p.innerHTML = <span class="string">'P1：您好！通过慕课网学习jQuery才是最佳的途径'</span>;</span></span><br><span class="line"><span class="javascript">            <span class="comment">// 将元素p的内容颜色改为红色</span></span></span><br><span class="line"><span class="javascript">			p.style.color = <span class="string">'red'</span>;	</span></span><br><span class="line"><span class="undefined">    	&#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 使用jQuery语法 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="undefined">            /**</span></span><br><span class="line"><span class="undefined">             * 通过jQuery语法获取id为imooc2的元素获得一个jQuery对象</span></span><br><span class="line"><span class="undefined">             * 调用该对象的html()方法进行更改内容</span></span><br><span class="line"><span class="undefined">             * 调用该对象的css()方法进行更改颜色样式</span></span><br><span class="line"><span class="undefined">             */   </span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> $p = $(<span class="string">'#no2'</span>);</span></span><br><span class="line"><span class="javascript">            $p.html(<span class="string">'P2：您好！通过慕课网学习jQuery才是最佳的途径'</span>).css(<span class="string">'color'</span>,<span class="string">'red'</span>);</span></span><br><span class="line"><span class="undefined">        &#125;);</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"no1"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"no2"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>原生DOM模型提供的方法获取到的就是一个DOM对象，$p是一个<font face="red">类数组对象</font>，对象中包含了DOM对象的信息，封装了很多操作方法。</p>
+</script></head></p>
       
 
       
@@ -213,7 +215,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Leetcode</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
         		</li>
       		
 		</ul>
@@ -269,7 +271,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/01/Leetcode-88-Merge-Sorted-Array/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/01/jQuery知识点-样式篇/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -283,18 +285,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/04/10/Leetcode-100-Same-Tree/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Leetcode 100. Same Tree
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/04/01/Leetcode-83-Remove-Duplicates-from-Sorted-List/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Leetcode 83. Remove Duplicates from Sorted List</div>
+    <a href="/2019/06/27/JS数组基础/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JS数组基础</div>
       <i class="icon-circle-right"></i>
     </a>
   
