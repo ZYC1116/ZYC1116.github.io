@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>jQuery知识点-样式篇 | RootUShaw</title>
+  <title>jQuery知识点-事件篇 | RootUShaw</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、环境搭建只需要在head标签中通过script引入jQuery库即可 1234567891011&amp;lt;!DOCTYPE HTML&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;    &amp;lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&amp;gt;    &amp;lt;script type=&quot;text/ja">
+  <meta name="description" content="一、鼠标事件1、click与dbclick事件：click方法用于监听用户单击操作，dbclick监听双击操作。在同一元素上同时绑定 click 和 dbclick 事件是不可取的。  $ele.click()：不带任何参数一般是用来指定触发一个事件，用的比较少。 $ele.click( handler(eventObject) )：触发点击操作会执行回调 handler函数，方法中的this是指">
 <meta name="keywords" content="前端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jQuery知识点-样式篇">
-<meta property="og:url" content="http://yoursite.com/2019/07/01/jQuery知识点-样式篇/index.html">
+<meta property="og:title" content="jQuery知识点-事件篇">
+<meta property="og:url" content="http://yoursite.com/2019/07/08/jQuery知识点-事件篇/index.html">
 <meta property="og:site_name" content="RootUShaw">
-<meta property="og:description" content="一、环境搭建只需要在head标签中通过script引入jQuery库即可 1234567891011&amp;lt;!DOCTYPE HTML&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;    &amp;lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&amp;gt;    &amp;lt;script type=&quot;text/ja">
+<meta property="og:description" content="一、鼠标事件1、click与dbclick事件：click方法用于监听用户单击操作，dbclick监听双击操作。在同一元素上同时绑定 click 和 dbclick 事件是不可取的。  $ele.click()：不带任何参数一般是用来指定触发一个事件，用的比较少。 $ele.click( handler(eventObject) )：触发点击操作会执行回调 handler函数，方法中的this是指">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-04T08:30:32.951Z">
+<meta property="og:updated_time" content="2019-07-09T11:07:43.822Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jQuery知识点-样式篇">
-<meta name="twitter:description" content="一、环境搭建只需要在head标签中通过script引入jQuery库即可 1234567891011&amp;lt;!DOCTYPE HTML&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;    &amp;lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&amp;gt;    &amp;lt;script type=&quot;text/ja">
+<meta name="twitter:title" content="jQuery知识点-事件篇">
+<meta name="twitter:description" content="一、鼠标事件1、click与dbclick事件：click方法用于监听用户单击操作，dbclick监听双击操作。在同一元素上同时绑定 click 和 dbclick 事件是不可取的。  $ele.click()：不带任何参数一般是用来指定触发一个事件，用的比较少。 $ele.click( handler(eventObject) )：触发点击操作会执行回调 handler函数，方法中的this是指">
   
     <link rel="alternative" href="/atom.xml" title="RootUShaw" type="application/atom+xml">
   
@@ -155,170 +155,96 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-jQuery知识点-样式篇" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-jQuery知识点-事件篇" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      jQuery知识点-样式篇
+      jQuery知识点-事件篇
     </h1>
   
 
         
-        <a href="/2019/07/01/jQuery知识点-样式篇/" class="archive-article-date">
-  	<time datetime="2019-07-01T13:50:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-01</time>
+        <a href="/2019/07/08/jQuery知识点-事件篇/" class="archive-article-date">
+  	<time datetime="2019-07-08T07:06:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、环境搭建"><a href="#一、环境搭建" class="headerlink" title="一、环境搭建"></a>一、环境搭建</h2><p>只需要在head标签中通过script引入jQuery库即可</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE HTML&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"https://code.jquery.com/jquery-3.4.1.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>环境搭建<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"> alert($) </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>3.4.1开发者版（修改调试）：<a href="https://code.jquery.com/jquery-3.4.1.js" target="_blank" rel="noopener">https://code.jquery.com/jquery-3.4.1.js</a></p>
-<p>3.4.1压缩版（体积效率）：<a href="https://code.jquery.com/jquery-3.4.1.min.js" target="_blank" rel="noopener">https://code.jquery.com/jquery-3.4.1.min.js</a></p>
-<h2 id="二、jQuery对象和DOM对象"><a href="#二、jQuery对象和DOM对象" class="headerlink" title="二、jQuery对象和DOM对象"></a>二、jQuery对象和DOM对象</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://code.jquery.com/jquery-3.4.1.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 使用JS原生语法 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="comment">// 通过原生JS语法获取id为imooc1的元素p</span></span></span><br><span class="line"><span class="javascript">			<span class="keyword">var</span> p = <span class="built_in">document</span>.getElementById(<span class="string">'no1'</span>);</span></span><br><span class="line"><span class="javascript">            <span class="comment">// 将元素p在html中内容改变</span></span></span><br><span class="line"><span class="javascript">			p.innerHTML = <span class="string">'P1：您好！通过慕课网学习jQuery才是最佳的途径'</span>;</span></span><br><span class="line"><span class="javascript">            <span class="comment">// 将元素p的内容颜色改为红色</span></span></span><br><span class="line"><span class="javascript">			p.style.color = <span class="string">'red'</span>;	</span></span><br><span class="line"><span class="undefined">    	&#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 使用jQuery语法 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="undefined">            /**</span></span><br><span class="line"><span class="undefined">             * 通过jQuery语法获取id为imooc2的元素获得一个jQuery对象</span></span><br><span class="line"><span class="undefined">             * 调用该对象的html()方法进行更改内容</span></span><br><span class="line"><span class="undefined">             * 调用该对象的css()方法进行更改颜色样式</span></span><br><span class="line"><span class="undefined">             */   </span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> $p = $(<span class="string">'#no2'</span>);</span></span><br><span class="line"><span class="javascript">            $p.html(<span class="string">'P2：您好！通过慕课网学习jQuery才是最佳的途径'</span>).css(<span class="string">'color'</span>,<span class="string">'red'</span>);</span></span><br><span class="line"><span class="undefined">        &#125;);</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"no1"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"no2"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>原生DOM模型提供的方法获取到的就是一个DOM对象，$p是一个<font color="red">类数组对象</font>，对象中包含了DOM对象的信息，封装了很多操作方法。</p>
-<h5 id="1、jQuery对象转化为DOM对象"><a href="#1、jQuery对象转化为DOM对象" class="headerlink" title="1、jQuery对象转化为DOM对象"></a>1、jQuery对象转化为DOM对象</h5><ul>
-<li><p>利用数组下标</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>元素一<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>元素二<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>元素三<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> $div = $(<span class="string">'div'</span>) <span class="comment">//jQuery对象</span></span><br><span class="line"><span class="keyword">var</span> div = $div[<span class="number">0</span>] <span class="comment">//转化成DOM对象</span></span><br></pre></td></tr></table></figure>
-<p>首先获取了所有div元素，然后指定了其中的一个DOM对象。</p>
-</li>
-<li><p>通过jQuery自带的get()方法</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div = $div.get(<span class="number">0</span>) <span class="comment">//通过get方法，转化成DOM对象</span></span><br></pre></td></tr></table></figure>
-<p>其实这个get方法就是第一种方法的封装。</p>
-</li>
-</ul>
-<h5 id="2、DOM对象转化为jQuery对象"><a href="#2、DOM对象转化为jQuery对象" class="headerlink" title="2、DOM对象转化为jQuery对象"></a>2、DOM对象转化为jQuery对象</h5><p>如果传递给$(DOM)函数的参数是一个DOM对象，jQuery方法会把这个DOM对象给包装成一个新的jQuery对象，利用此方法就可以进行转化。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'div'</span>); <span class="comment">//dom对象，一个数组集合</span></span><br><span class="line"><span class="keyword">var</span> $div = $(div); <span class="comment">//jQuery对象</span></span><br><span class="line"><span class="keyword">var</span> $first = $div.first(); <span class="comment">//找到第一个div元素</span></span><br><span class="line">$first.css(<span class="string">'color'</span>, <span class="string">'red'</span>); <span class="comment">//给第一个元素设置颜色</span></span><br></pre></td></tr></table></figure>
-<h2 id="三、jQuery选择器"><a href="#三、jQuery选择器" class="headerlink" title="三、jQuery选择器"></a>三、jQuery选择器</h2><p>1、ID选择器：$(“#id”)，id是唯一，如果出现了多个相同的（本不应该），则只匹配第一个DOM元素。</p>
-<p>2、类选择器：$( “.class” )</p>
-<p>3、元素选择器：$(“element”)</p>
-<p>4、全选择器：$(“*”)</p>
-<p>5、层级选择器：子元素&gt;，后代元素空格，兄弟元素+，相邻元素~</p>
-<p>6、基本筛选选择器：和CSS中的伪元素类似</p>
+        <h2 id="一、鼠标事件"><a href="#一、鼠标事件" class="headerlink" title="一、鼠标事件"></a>一、鼠标事件</h2><p>1、click与dbclick事件：click方法用于监听用户单击操作，dbclick监听双击操作。在同一元素上同时绑定 click 和 dbclick 事件是不可取的。</p>
 <ul>
-<li>$(“:first”)：匹配第一个元素</li>
-<li>$(“:last”)：匹配最后一个元素</li>
-<li>$(“:not(selector)”)：用来过滤，选择去除不匹配给定的选择器的所有元素</li>
-<li>$(“:eq(index)”)：匹配的集合中选择索引值为index的</li>
-<li>$(“:gt(index)”)：匹配的集合中选择索引值大于index的</li>
-<li>$(“:even”)：索引值为偶数</li>
-<li>$(“:odd”)：索引值为奇数</li>
-<li>$(“:lt(index)”)：匹配的集合中选择索引值小于index的</li>
-<li>$(“:header”)：标题元素</li>
-<li>$(“:lang(language)”)：选择指定语言</li>
-<li>$(“:root”)：文档根元素</li>
-<li>$(“:animated”)：正在执行动画效果的元素</li>
+<li>$ele.click()：不带任何参数一般是用来指定触发一个事件，用的比较少。</li>
+<li>$ele.click( handler(eventObject) )：触发点击操作会执行回调 handler函数，方法中的this是指向了绑定事件的元素。</li>
+<li>$ele.click( [eventData ], handler(eventObject) )：可以接受一个数据参数，这样的处理是为了解决不同作用域下数据传递的问题。</li>
 </ul>
-<p>7、内容筛选选择器</p>
+<p>2、mousedown与mouseup事件：三种用法同上。</p>
 <ul>
-<li>$(“:contains(text)”)：包含指定文本的</li>
-<li>$(“:parent”)：所有含有子元素或者文本的元素</li>
-<li>$(“:empty”)：没有子元素的元素（包含文本节点）</li>
-<li>$(“:has(selector)”)：至少包含指定选择器的元素</li>
+<li>如果在一个元素按住了鼠标不放，并且拖动鼠标离开这个元素，并释放鼠标键，这仍然是算作mousedown事件。</li>
+<li>click事件其实是由mousedown于mouseup 2个动作构成，所以点击的动作只有在松手后才触发</li>
 </ul>
-<p>8、可见性筛选选择器</p>
+<p>3、mousemove事件：如果关联了太多的事件处理程序，会导致系统的崩溃</p>
+<p>4、mouseover与mouseout事件</p>
+<p>5、mouseenter与mouseleave事件：用户操作鼠标是否有移到元素内部或是元素外部。</p>
 <ul>
-<li>$(“:visible”)：所有显示的，在文档中占据一定空间的</li>
-<li>$(“:hidden”)：所有隐藏的，包含display=“none”，隐藏表单，visibility等</li>
+<li>mouseenter的JS事件是IE专有的，因为很有用，所以jQuery模拟这个事件，以便在所有浏览器中都可用。</li>
+<li>mouseenter事件和mouseover的区别：主要在于冒泡的方式处理问题。mouseenter事件只会在绑定它的元素上被调用，而不会在后代节点上被触发。</li>
 </ul>
-<p>9、属性筛选选择器</p>
-<ul>
-<li>$(“[attribute|=’value’]”)：属性值等于字符串或以其为前缀</li>
-<li>$(“[attribute*=’value’]”)：属性值包含字符串</li>
-<li>$(“[attribute~=’value’]”)：属性用空格分隔的值中包含给定值</li>
-<li>$(“[attribute=’value’]”)：等于给定值</li>
-<li>$(“[attribute！=’value’]”)：不等于给定值或不存在</li>
-<li>$(“[attribute^=’value’]”)：属性值以给定字符串开始</li>
-<li>$(“[attribute$=’value’]”)：属性值以给定字符串结尾，区分大小写</li>
-<li>$(“[attribute]”)：具有指定属性</li>
-<li>$(“[attributeFilter1] [attributeFilterN]”)：匹配所有指定属性筛选器</li>
-</ul>
-<p>10、子元素选择器</p>
-<ul>
-<li>$(“:first-child”)：所有父元素下的第一个元素</li>
-<li>$(“:last-child”)：所有父元素下的最后一个元素</li>
-<li>$(“:only-child”)：所有父元素下的唯一一个元素</li>
-<li>$(“:nth-child”)：所有父元素下的第n元素</li>
-<li>$(“:nth-last-child”)：所有父元素下的倒数第n个元素</li>
-</ul>
-<p>11、表单元素选择器：$(“:input”)，$(“:text”)，$(“:password”)，$(“:radio”)，$(“:check-box”)，$(“:submit”)，$(“:image”)，$(“:reset”)，$(“:button”)，$(“:file”)</p>
-<p>12、表单对象属性筛选选择器：</p>
-<ul>
-<li>$(“:enabled”)：可用的</li>
-<li>$(“:disabled“)：不可用的</li>
-<li>$(“:checked”)：被选中的input元素，某些情况下会出现错误</li>
-<li>$(“:selected”)：被选中的option元素</li>
-</ul>
-<p>13、this选择器</p>
-<p>this表示当前的上下文对象是一个HTML对象，可以调用HTML对象所拥有的属性和方法</p>
-<p>$(this)代表上下文对象是一个jQuery的上下文对象，可以调用jQuery的方法和属性值</p>
-<h2 id="四、属性与样式"><a href="#四、属性与样式" class="headerlink" title="四、属性与样式"></a>四、属性与样式</h2><p>1、.attr()和.removeAttr()</p>
-<ul>
-<li>.attr(属性名)：获取属性值</li>
-<li>.attr(属性名，属性值)：设置属性值</li>
-<li>.attr(属性名，函数值)：获取属性函数值</li>
-<li>.attr(attributes)：给指定元素多个属性值，属性名：”属性值“，属性名：”属性值“</li>
-<li>.removeAttr(attributeName)：移除属性</li>
-</ul>
-<font color="red">attribute是DOM节点自带的属性，比如id，class，使用attr获取。property是这个DOM元素作为对象附加的内容，例如tagName,nodeName，使用prop获取</font>
+<p>6、hover事件：$(selector).hover(handlerIn, handlerOut)，handlerIn(eventObject)：当鼠标指针进入元素时触发执行的事件函数。handlerOut(eventObject)：当鼠标指针离开元素时触发执行的事件函数。</p>
+<p>7、focusin事件：当一个元素，或者其内部任何一个元素获得焦点的时候使用。</p>
+<p>8、focusout事件：当一个元素，或者其内部任何一个元素失去焦点的时候使用。</p>
+<h2 id="二、表单事件"><a href="#二、表单事件" class="headerlink" title="二、表单事件"></a>二、表单事件</h2><p>1、blur与focus事件：focus()在元素本身产生，focusin()在元素包含的元素中产生，blur和focusout的关系也是如此。</p>
+<p>2、change事件：监听input，textarea之类的这些改变的动作，都是在失去焦点后触发。</p>
+<p>3、select事件：当 textarea 或文本类型的 input 元素中的文本被选择时，会发生 select 事件。只能用于input元素与textarea元素。</p>
+<p>4、submit事件：在表单提交的时候过滤一些的数据、做一些必要的操作（例如：验证表单输入的正确性，如果错误就阻止提交，从新输入）此时可以通过submit事件，监听下提交表单的这个动作。</p>
+<font color="red">form元素是有默认提交表单的行为，如果通过submit处理的话，需要禁止浏览器的这个默认行为。传统的方式是调用事件对象  e.preventDefault() 来处理， jQuery中可以直接在函数中最后结尾return false即可</font>
 
-<p>2、.html()和.text()</p>
-<ul>
-<li>.html()：不传值，获取集合中第一个匹配元素的HTML内容</li>
-<li>.html(htmlString)：设置每一个匹配元素的html内容</li>
-<li><p>.html(function(index，oldhtml))：返回设置HTML内容的一个函数</p>
-</li>
-<li><p>.text() 得到匹配元素集合中每个元素的合并文本，包括他们的后代</p>
-</li>
-<li>.text( textString ) 用于设置匹配元素内容的文本</li>
-<li>.text( function(index, text) ) 用来返回设置文本内容的一个函数</li>
-</ul>
-<font color="red">.html()内部使用的是innerHTML处理，所以这个操作针对的是整个HTML你内容，不仅仅是文本，只能使用在HTML文档中。<br>.text()结果返回一个字符串，包含所有匹配元素的合并文本，可以使用在HTML和XML文档中。</font>
+<h2 id="三、键盘事件"><a href="#三、键盘事件" class="headerlink" title="三、键盘事件"></a>三、键盘事件</h2><p>1、keydown事件：当用户在一个元素上第一次按下键盘上字母键的时候，就会触发它。</p>
+<p>2、keyup事件：当用户在一个元素上第一次松手键盘上的键的时候，就会触发它。</p>
+<font color="red">理论上它可以绑定到任何元素，但keydown/keyup事件只是发送到具有焦点的元素上，不同的浏览器中，可获得焦点的元素略有不同。</font>
 
-<p>3、.val()：主要用于处理表单元素的值</p>
+<p>3、keypress()事件：keydown事件触发在文字还没敲进文本框，这时如果在keydown事件中输出文本框中的文本，得到的是触发键盘事件前的文本，而keyup事件触发时整个键盘事件的操作已经完成，获得的是触发键盘事件后的文本。当浏览器捕获键盘输入时，还提供了一个keypress的响应，这个跟keydown是非常相似。</p>
 <ul>
-<li>.val()：无参数，获取匹配的元素集合中第一个元素的当前值</li>
-<li>.val( value )：设置匹配的元素集合中每个元素的值</li>
-<li>.val( function ) ：一个用来返回设置值的函数</li>
+<li>只能捕获单个字符，不能捕获组合键</li>
+<li>无法响应系统功能键（如delete，backspace）</li>
+<li>不区分小键盘和主键盘的数字字符</li>
+<li>主要用来接收字母、数字等ANSI字符</li>
 </ul>
-<font color="red">通过.val()处理select元素，当没有选择项被选中，它返回null<br>如果select元素有multiple（多选）属性，并且至少一个选择项被选中，.val()方法返回一个数组，这个数组包含每个选中选择项的值</font>
-
-<p>4、.addClass()</p>
+<h2 id="四、事件绑定和解绑"><a href="#四、事件绑定和解绑" class="headerlink" title="四、事件绑定和解绑"></a>四、事件绑定和解绑</h2><p>1、 on()：是官方推荐的绑定事件的一个方法。</p>
 <ul>
-<li><p>.addClass( className ) : 为每个匹配元素所要增加的一个或多个样式名</p>
+<li><p>基本用法：.on( events ,[ selector ] ,[ data ] )，可以自定义事件名。</p>
 </li>
-<li><p>.addClass( function(index, currentClass) ) : 这个函数返回一个或更多用空格隔开的要增加的样式名</p>
+<li><p>多个事件绑定同一个函数：$(“#elem”).on(“mouseover mouseout”,function(){ });</p>
+</li>
+<li><p>多个事件绑定不同函数：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#elem"</span>).on(&#123;</span><br><span class="line">    mouseover:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;,  </span><br><span class="line">    mouseout:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将数据传递到处理程序:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">greet</span>(<span class="params"> event </span>) </span>&#123;</span><br><span class="line">  alert( <span class="string">"Hello "</span> + event.data.name ); </span><br><span class="line">&#125;</span><br><span class="line">$( <span class="string">"button"</span> ).on( <span class="string">"click"</span>, &#123;</span><br><span class="line">  name: <span class="string">"name"</span></span><br><span class="line">&#125;, greet );</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>高级用法：委托机制。.on( events ,[ selector ] ,[ data ], handler(eventObject) )</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"left"</span>&gt;</span><br><span class="line">    &lt;p <span class="class"><span class="keyword">class</span></span>=<span class="string">"aaron"</span>&gt;</span><br><span class="line">        &lt;a&gt;目标节点&lt;<span class="regexp">/a&gt; /</span><span class="regexp">/点击在这个元素上</span></span><br><span class="line"><span class="regexp">    &lt;/</span>p&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">$("div").on("click","p",fn)</span></span><br></pre></td></tr></table></figure>
+<p>事件绑定在最上层div元素上，当用户触发在a元素上，事件将往上冒泡，一直会冒泡在div元素上。如果提供了第二参数，那么事件在往上冒泡的过程中遇到了选择器匹配的元素，将会触发事件回调函数。</p>
 </li>
 </ul>
-<font color="red">.addClass()不会替换类名，只是添加一个类名到元素上</font>
-
-<p>5、.removeClass()</p>
-<ul>
-<li>.removeClass( [className ] )：每个匹配元素移除的一个或多个用空格隔开的样式名</li>
-<li>.removeClass( function(index, class) ) ： 一个函数，返回一个或多个将要被移除的样式名</li>
-</ul>
-<font color="red">没有参数的情况下会清除所有类名，否则只是清除指定类名</font>
-
-<p>6、.toggleClass()：在匹配的元素集合中的每个元素上添加或删除一个或多个样式类,取决于这个样式类是否存在或值切换属性。即：如果存在（不存在）就删除（添加）一个类</p>
-<ul>
-<li>.toggleClass( className )：在匹配的元素集合中的每个元素上用来切换的一个或多个（用空格隔开）样式类名</li>
-<li>.toggleClass( className, switch )：一个布尔值，用于判断样式是否应该被添加或移除</li>
-<li>.toggleClass( [switch ] )：一个用来判断样式类添加还是移除的 布尔值</li>
-<li>.toggleClass( function(index, class, switch) [, switch ] )：用来返回在匹配的元素集合中的每个元素上用来切换的样式类名的一个函数。接收元素的索引位置和元素旧的样式类作为参数</li>
-</ul>
-<p>7、.css()</p>
-<ul>
-<li>.css( propertyName ) ：获取匹配元素集合中的第一个元素的样式属性的计算值</li>
-<li>.css( propertyNames )：传递一组数组，返回一个对象结果</li>
-<li>.css(propertyName, value )：设置CSS</li>
-<li>.css( propertyName, function )：可以传入一个回调函数，返回取到对应的值进行处理</li>
-<li>.css( properties )：可以传一个对象，同时设置多个样式</li>
-</ul>
+<p>2、off()：卸载事件。不带参数会卸载所有事件，卸载多个事件可以用空格分开。</p>
+<h2 id="五、事件对象"><a href="#五、事件对象" class="headerlink" title="五、事件对象"></a>五、事件对象</h2><p>1、事件对象是用来记录一些事件发生时的相关信息的对象。</p>
+<p>2、事件对象只有事件发生时才会产生，并且只能是事件处理函数内部访问，在所有事件处理函数运行结束后，事件对象就被销毁。</p>
+<p>3、event.target代表当前触发事件的元素，可以通过当前元素对象的一系列属性来判断是不是我们想要的元素。通常用于比较 event.target 和 this 来确定事件是不是由于冒泡而触发的。经常用于事件冒泡时处理事件委托。</p>
+<p>4、事件委托，就是利用了时间冒泡的一个技巧。</p>
+<p>5、event.type：获取事件的类型</p>
+<p>6、event.pageX 和 event.pageY：获取鼠标当前相对于页面的坐标。以页面为参考点，不随滑动条移动而变化。</p>
+<p>7、event.preventDefault() 方法：阻止默认行为。可以用 event.isDefaultPrevented() 来确定这个方法是否(在那个事件对象上)被调用过了。</p>
+<p>8、event.stopPropagation() 方法：阻止事件冒泡</p>
+<p>9、event.which：获取在鼠标单击时，单击的是鼠标的哪个键</p>
+<p>10、event.currentTarget : 在事件冒泡过程中的当前DOM元素</p>
+<p>。冒泡前的当前触发事件的DOM对象，等同于this</p>
+<p>11、this和event.target的区别：s中事件是会冒泡的，所以this是可以变化的，但event.target不会变化，它永远是直接接受事件的目标DOM元素。都是DOM对象，可以转换为jQuery对象。</p>
+<h2 id="六、自定义事件"><a href="#六、自定义事件" class="headerlink" title="六、自定义事件"></a>六、自定义事件</h2><p>1、trigger事件：根据绑定到匹配元素的给定的事件类型执行所有的处理程序和行为。会在DOM树上冒泡。</p>
+<p>2、triggerHandler事件：触发通过 jQuery 绑定的事件处理函数，而不触发原生的事件。不会触发浏览器默认行为，仅影响第一个匹配到的元素，不会冒泡，返回最后一个处理的事件的返回值。</p>
 
       
 
@@ -409,7 +335,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/01/jQuery知识点-样式篇/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/08/jQuery知识点-事件篇/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -423,18 +349,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/03/技巧-1/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/07/09/jQuery知识点-动画篇/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          技巧
+          jQuery知识点-动画篇
         
       </div>
     </a>
   
   
-    <a href="/2019/06/27/JS数组基础/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">JS数组基础</div>
+    <a href="/2019/07/04/jQuery知识点-DOM篇/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">jQuery知识点-DOM篇</div>
       <i class="icon-circle-right"></i>
     </a>
   
