@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>jQuery知识点-动画篇 | RootUShaw</title>
+  <title>技巧 | RootUShaw</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、基础1、.hide()：隐藏元素，提供参数options，可以设置fast（200ms）或slow（600ms）延时。最终效果是display:none。 2、.show()：显示元素，可以设置动画效果的持续时间。  show与hide方法是修改的display属性 如果使用!important在样式中，比如display: none !important，如果希望.show()方法正常工作，">
+  <meta name="description" content="1、隐藏一个元素  display：none type=“hidden”的表单元素 宽度高度显式设置为0 祖先元素是隐藏的 visibility：hidden opacity：0  2、jQuery通过id筛选比通过class筛选要快很多。 3、IE6不支持position: fixed以及发生跳变的解决办法 1234567/*position:fixed*/position: absolute;">
 <meta name="keywords" content="前端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jQuery知识点-动画篇">
-<meta property="og:url" content="http://yoursite.com/2019/07/09/jQuery知识点-动画篇/index.html">
+<meta property="og:title" content="技巧">
+<meta property="og:url" content="http://yoursite.com/2019/07/03/技巧/index.html">
 <meta property="og:site_name" content="RootUShaw">
-<meta property="og:description" content="一、基础1、.hide()：隐藏元素，提供参数options，可以设置fast（200ms）或slow（600ms）延时。最终效果是display:none。 2、.show()：显示元素，可以设置动画效果的持续时间。  show与hide方法是修改的display属性 如果使用!important在样式中，比如display: none !important，如果希望.show()方法正常工作，">
+<meta property="og:description" content="1、隐藏一个元素  display：none type=“hidden”的表单元素 宽度高度显式设置为0 祖先元素是隐藏的 visibility：hidden opacity：0  2、jQuery通过id筛选比通过class筛选要快很多。 3、IE6不支持position: fixed以及发生跳变的解决办法 1234567/*position:fixed*/position: absolute;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-25T06:42:29.514Z">
+<meta property="og:updated_time" content="2019-07-23T14:12:01.263Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jQuery知识点-动画篇">
-<meta name="twitter:description" content="一、基础1、.hide()：隐藏元素，提供参数options，可以设置fast（200ms）或slow（600ms）延时。最终效果是display:none。 2、.show()：显示元素，可以设置动画效果的持续时间。  show与hide方法是修改的display属性 如果使用!important在样式中，比如display: none !important，如果希望.show()方法正常工作，">
+<meta name="twitter:title" content="技巧">
+<meta name="twitter:description" content="1、隐藏一个元素  display：none type=“hidden”的表单元素 宽度高度显式设置为0 祖先元素是隐藏的 visibility：hidden opacity：0  2、jQuery通过id筛选比通过class筛选要快很多。 3、IE6不支持position: fixed以及发生跳变的解决办法 1234567/*position:fixed*/position: absolute;">
   
     <link rel="alternative" href="/atom.xml" title="RootUShaw" type="application/atom+xml">
   
@@ -155,90 +155,43 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-jQuery知识点-动画篇" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-技巧" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      jQuery知识点-动画篇
+      技巧
     </h1>
   
 
         
-        <a href="/2019/07/09/jQuery知识点-动画篇/" class="archive-article-date">
-  	<time datetime="2019-07-09T11:09:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-09</time>
+        <a href="/2019/07/03/技巧/" class="archive-article-date">
+  	<time datetime="2019-07-03T12:38:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、基础"><a href="#一、基础" class="headerlink" title="一、基础"></a>一、基础</h2><p>1、.hide()：隐藏元素，提供参数options，可以设置fast（200ms）或slow（600ms）延时。最终效果是display:none。</p>
-<p>2、.show()：显示元素，可以设置动画效果的持续时间。</p>
+        <p>1、隐藏一个元素</p>
 <ul>
-<li>show与hide方法是修改的display属性</li>
-<li>如果使用!important在样式中，比如display: none !important，如果希望.show()方法正常工作，必须使用.css(‘display’, ‘block !important’)重写样式</li>
-<li>如果让show与hide成为一个动画，那么默认执行动画会改变元素的高度，宽度，透明度</li>
+<li>display：none</li>
+<li>type=“hidden”的表单元素</li>
+<li>宽度高度显式设置为0</li>
+<li>祖先元素是隐藏的</li>
+<li>visibility：hidden</li>
+<li>opacity：0</li>
 </ul>
-<p>3、.toggle()：隐藏和显示切换，参数 [duration]，[complete]可以实现时间和动画结束的回调，也可以使用.toggle(display)指定要改变的元素的最终效果。</p>
-<h2 id="二、下拉上卷"><a href="#二、下拉上卷" class="headerlink" title="二、下拉上卷"></a>二、下拉上卷</h2><p>1、.slideDown()：用滑动动画显示一个匹配元素，可以设置时间和回调函数，如果设置了多个动画，</p>
-<font color="red">注意回调函数会在每一个元素执行完动画后都执行一次，而不是一组动画整体才执行一次。</font>
-
-<p>2、.slideUp([duration ] [, easing ] [, complete ])：上卷动画，参数可不设置，因为动画是异步的，所以要在动画之后执行某些操作就必须要写到回调函数里面。设置位置高度为0。</p>
-<p>3、.slideToggle( [duration ] ,[ complete ] )：下拉上卷切换，参数可不设置。</p>
-<h2 id="三、淡入淡出"><a href="#三、淡入淡出" class="headerlink" title="三、淡入淡出"></a>三、淡入淡出</h2><p>1、.fadeOut( [duration ], [ complete ] )：隐藏所有匹配的元素，并带有淡出的过渡动画效果。元素是隐藏状态不对作任何改变，元素是可见的，则将其隐藏。改变的是不透明度，高度和宽度不会发生变化。opacity从1到0。</p>
-<p>2、.fadeIn( [duration ], [ complete ] )：淡入的动画效果，操作透明度。opacity从0到1。</p>
-<p>3、.fadeToggle( [duration ] ,[ complete ] )：淡入淡出切换，隐藏的元素不会被完全显示，不再影响页面的布局。</p>
-<p>4、.fadeTo( duration, opacity ,callback)：opacity可以设置为0到1之间的中间值。</p>
-<font color="red">几种动画切换的比较：.toggle()控制的是display，.slideToggle()控制的是高度，.fadeToggle()控制的是透明度</font>
-
-<h2 id="四、自定义动画"><a href="#四、自定义动画" class="headerlink" title="四、自定义动画"></a>四、自定义动画</h2><p>1、.animate( properties ,[ duration ], [ easing ], [ complete ] )</p>
-<ul>
-<li>properties：一个或多个CSS属性的键值对构成的object对象，其中用于动画的属性必须是数字的，CSS样式使用DOM名称（比如 “fontSize”）来设置，而非 CSS 名称（比如 “font-size”）。除了定义数值，每个属性能使用’show’, ‘hide’, 和 ‘toggle’。如果提供一个以+= 或 -=开始的值，那么目标值就是以这个属性的当前值加上或者减去给定的数字来计算的。</li>
-<li>duration：动画执行时间，以ms为单位，值越大越慢。</li>
-<li>easing：动画运动的算法，默认swing，其他的需要调用相关插件。</li>
-<li>complete：动画完成时执行的函数。</li>
-</ul>
-<p>2、.animate( properties, options )：第二种语法，options参数如下</p>
-<ul>
-<li><p>duration：动画执行时间，以ms为单位，值越大越慢。</p>
-</li>
-<li><p>easing：过渡时使用的缓动函数。</p>
-</li>
-<li><p>step：每个动画的每一步完成后要执行的函数。</p>
-</li>
-<li><p>progress：每一次动画调用的时候执行这个回调</p>
-</li>
-<li><p>complete：动画完成回调。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#elem'</span>).animate(&#123;</span><br><span class="line">    width: <span class="string">'toggle'</span>,  </span><br><span class="line">    height: <span class="string">'toggle'</span></span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    duration: <span class="number">5000</span>,</span><br><span class="line">    specialEasing: &#123;</span><br><span class="line">      width: <span class="string">'linear'</span>,</span><br><span class="line">      height: <span class="string">'easeOutBounce'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    complete: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      $(<span class="keyword">this</span>).after(<span class="string">'&lt;div&gt;Animation complete.&lt;/div&gt;'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>3、.stop( [clearQueue ], [ jumpToEnd ] )/.stop( [clearQueue ], [ jumpToEnd ] )：停止动画</p>
-<ul>
-<li>.stop(); 停止当前动画，点击在暂停处继续开始。只停止第一个动画</li>
-<li>.stop(true); 如果同一元素调用多个动画方法，尚未被执行的动画被放置在元素的效果队列中。这些动画不会开始，直到第一个完成。当调用.stop()的时候，队列中的下一个动画立即开始。如果clearQueue参数提供true值,那么在队列中的动画其余被删除并永远不会运行。停止所有动画</li>
-<li>.stop(true,true); 当前动画将停止，但该元素上的 CSS 属性会被立刻修改成动画的目标值。直接跳到第一个动画的最终状态。</li>
-</ul>
-<h2 id="五、jQuery核心"><a href="#五、jQuery核心" class="headerlink" title="五、jQuery核心"></a>五、jQuery核心</h2><p>1、.each()</p>
-<ul>
-<li><p>jQuery的大部分方法都是针元素合集的操作，所以jQuery会提供$(selector).each()来遍历jQuery对象，本质就是for循环的一个包装。</p>
-</li>
-<li><p>jQuery.each(array/object, callback )是一个通用方法，用于处理对象和数组的遍历如果callback的返回值为false，就停止循环，相当于for循环中的break。</p>
-</li>
-</ul>
-<p>2、.inArray( value, array ,[ fromIndex ] )：在数组中搜索指定的值，返回其索引值，如果不存在则返回-1。</p>
-<p>3、.trim()：用于去除字符串两端的空白字符（包括连续的空格和制表符tab），不会移除中间的空格。</p>
-<p>4、.get()：获取DOM集合中的单个DOM，相当于document.getElementById。如果传递负索引值，则从后往前搜索。正索引开始值为0，负索引开始值为-1。</p>
-<p>5、.index()：从匹配的元素中搜索给定元素的索引值，从0开始计数。不传参数，参数是DOM/jQuery对象，参数是选择器均可，返回值是查找元素在同辈元素中的位置。</p>
-<h2 id="六、jQuery插件-validation-plugin"><a href="#六、jQuery插件-validation-plugin" class="headerlink" title="六、jQuery插件-validation plugin"></a>六、jQuery插件-validation plugin</h2><p>1、表单验证插件：<a href="https://plugins.jquery.com/tag/validate/" target="_blank" rel="noopener">https://plugins.jquery.com/tag/validate/</a></p>
-<p>2、validation插件：<a href="http://jqueryvalidation.org/" target="_blank" rel="noopener">http://jqueryvalidation.org/</a></p>
-<p>3、插件的引入</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"jquery.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script src=<span class="string">"jquery.validate.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-<p>4、基本API（method是验证方法，rule是验证规则）：validate()方法，required，remote，minlength，maxlength，rangelength，min, max, range, email, url, date, dateISO, number, digits, equalTo</p>
-<p>5、高级API：valid（检查表单是否有效），rules（获取表单元素的检验规则）；validator对象（form，element，resetForm，showErrors，numberOfInvalids）；validator对象静态方法，jQuery.validator.（addMethod自定义验证方法, format, setDefaults, addClassRules）；方法配置项（submitHandler, invalidHandler, ignore, rules, messages, groups, onsubmit, onfoucusout, onkeyup, onclick, focusInvalid, focusCleanup, errorClass, validClass, errorElement, wrapper, errorLabelContainer, errorContainer, showErrors, highlight, unhighlight, success）；选择器扩展（:blank, :filled, :unchecked）</p>
-<p>6、扩展方法库：addition-methods.js</p>
+<p>2、jQuery通过id筛选比通过class筛选要快很多。</p>
+<p>3、IE6不支持position: fixed以及发生跳变的解决办法</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*position:fixed*/</span></span><br><span class="line"><span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>;</span><br><span class="line"><span class="selector-tag">bottom</span>: <span class="selector-tag">auto</span>;</span><br><span class="line">top: expression(100+((e=document.documentElement.scrollTop)?e:document.body.scrollTop)+'px');</span><br><span class="line"><span class="comment">/*解决跳变bug*/</span></span><br><span class="line"><span class="selector-tag">background-image</span>: <span class="selector-tag">url</span>(<span class="selector-tag">about</span><span class="selector-pseudo">:blank)</span>;</span><br><span class="line"><span class="selector-tag">background-attachment</span>: <span class="selector-tag">fixed</span>;</span><br></pre></td></tr></table></figure>
+<p>4、IE对JS中getElementsByClassName方法支持较差</p>
+<p>5、CSS中绝对定位的父元素需要设置相对定位</p>
+<p>6、JS没有getByClass()，需要自己封装</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getByClass</span>(<span class="params">parent, clsName</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = [];</span><br><span class="line">    <span class="keyword">var</span> oElements = parent.getElementsByTagName(<span class="string">'*'</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; oElements.length; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(oElements[i].className == clsName)&#123;</span><br><span class="line">            result.push(oElements[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>7、字符集图标：将网页上常用的icon做成font字符集，以字体的方式插入到网页上，可以减轻服务器负担，减少带宽。</p>
 
       
 
@@ -329,7 +282,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/09/jQuery知识点-动画篇/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/03/技巧/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -343,18 +296,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/23/Ajax/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/07/04/jQuery知识点-DOM篇/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Ajax
+          jQuery知识点-DOM篇
         
       </div>
     </a>
   
   
-    <a href="/2019/07/08/jQuery知识点-事件篇/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">jQuery知识点-事件篇</div>
+    <a href="/2019/07/01/jQuery知识点-样式篇/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">jQuery知识点-样式篇</div>
       <i class="icon-circle-right"></i>
     </a>
   

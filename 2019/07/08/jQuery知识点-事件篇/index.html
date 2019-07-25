@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="RootUShaw">
 <meta property="og:description" content="一、鼠标事件1、click与dbclick事件：click方法用于监听用户单击操作，dbclick监听双击操作。在同一元素上同时绑定 click 和 dbclick 事件是不可取的。  $ele.click()：不带任何参数一般是用来指定触发一个事件，用的比较少。 $ele.click( handler(eventObject) )：触发点击操作会执行回调 handler函数，方法中的this是指">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-09T11:07:43.822Z">
+<meta property="og:updated_time" content="2019-07-23T14:11:10.317Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery知识点-事件篇">
 <meta name="twitter:description" content="一、鼠标事件1、click与dbclick事件：click方法用于监听用户单击操作，dbclick监听双击操作。在同一元素上同时绑定 click 和 dbclick 事件是不可取的。  $ele.click()：不带任何参数一般是用来指定触发一个事件，用的比较少。 $ele.click( handler(eventObject) )：触发点击操作会执行回调 handler函数，方法中的this是指">
@@ -243,6 +243,7 @@
 <p>10、event.currentTarget : 在事件冒泡过程中的当前DOM元素</p>
 <p>。冒泡前的当前触发事件的DOM对象，等同于this</p>
 <p>11、this和event.target的区别：s中事件是会冒泡的，所以this是可以变化的，但event.target不会变化，它永远是直接接受事件的目标DOM元素。都是DOM对象，可以转换为jQuery对象。</p>
+<p>12、为JS动态生成的网页元素添加事件时通常需要使用事件代理来实现。</p>
 <h2 id="六、自定义事件"><a href="#六、自定义事件" class="headerlink" title="六、自定义事件"></a>六、自定义事件</h2><p>1、trigger事件：根据绑定到匹配元素的给定的事件类型执行所有的处理程序和行为。会在DOM树上冒泡。</p>
 <p>2、triggerHandler事件：触发通过 jQuery 绑定的事件处理函数，而不触发原生的事件。不会触发浏览器默认行为，仅影响第一个匹配到的元素，不会冒泡，返回最后一个处理的事件的返回值。</p>
 
