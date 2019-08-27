@@ -184,7 +184,7 @@
 <li><p>解决方法一：使用代理，在同域名的web服务器端创建一个代理，比如上海服务器上有一个服务<a href="http://www.shanghai.com/service.php，北京服务器上有一个服务www.beijing.com/proxy-shanghaiservice.php，在后端请求上海服务，再把响应结果返回给前端" target="_blank" rel="noopener">www.shanghai.com/service.php，北京服务器上有一个服务www.beijing.com/proxy-shanghaiservice.php，在后端请求上海服务，再把响应结果返回给前端</a></p>
 </li>
 <li><p>解决方法二：JSONP，只能对GET请求进行改造</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--在www.aaa.com页面中--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">jsonp</span>(<span class="params">json</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">        alert(json[<span class="string">"name"</span>]); <span class="comment">//a域名是声明，b域名是调用</span></span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span> = <span class="string">"http://www.bbb.com/jsonp.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--在www.bbb.com页面中--&gt;</span></span><br><span class="line">jsonp(&#123;'name':'zhou', 'age':21&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--在www.aaa.com页面中--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    function jsonp(json)&#123;</span></span><br><span class="line"><span class="undefined">        alert(json["name"]); //a域名是声明，b域名是调用</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span> = <span class="string">"http://www.bbb.com/jsonp.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--在www.bbb.com页面中--&gt;</span></span><br><span class="line">jsonp(&#123;'name':'zhou', 'age':21&#125;);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>解决方法三：HTML5提供的XMLHttpRequest level2已经实现了跨域访问，但是IE10一下的版本不支持，只需要在服务器端做一下小改造即可：</p>
 <p>header(‘Access-Control-Allow-Origin:*’);</p>
@@ -497,11 +497,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
               </li>
             
             <div class="clearfix"></div>
