@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="RootUShaw">
 <meta property="og:description" content="一、JavaScript的组成1、ECMAScript - JavaScript的核心 ：描述了语言的基本语法和数据类型，ECMAScript是一套标准，定义了一种语言的标准与具体实现无关 2、BOM - 浏览器对象模型：一套操作浏览器功能的API，通过BOM可以操作浏览器窗口，比如：弹出框、控制浏览器跳转、获取分辨率等 3、DOM - 文档对象模型：一套操作页面元素的API，DOM可以把HTML">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-05T12:51:23.567Z">
+<meta property="og:updated_time" content="2019-09-05T13:47:05.524Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS基础知识点">
 <meta name="twitter:description" content="一、JavaScript的组成1、ECMAScript - JavaScript的核心 ：描述了语言的基本语法和数据类型，ECMAScript是一套标准，定义了一种语言的标准与具体实现无关 2、BOM - 浏览器对象模型：一套操作浏览器功能的API，通过BOM可以操作浏览器窗口，比如：弹出框、控制浏览器跳转、获取分辨率等 3、DOM - 文档对象模型：一套操作页面元素的API，DOM可以把HTML">
@@ -224,7 +224,8 @@
 <li>Undefined：一个声明了没有赋值的变量</li>
 <li>Null：表示一个空，变量的值如果想为null，必须手动设置</li>
 </ul>
-<p>2、复杂数据类型：Object</p>
+<p>2、复杂数据类型：Object  Array  function</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">简单类型和复杂类型的区别:</span><br><span class="line">简单数据类型在存储时，变量中存储的是值本身</span><br><span class="line">复杂数据类型在存储时，变量中存储的仅仅是地址（引用）</span><br><span class="line"></span><br><span class="line">PS：堆栈空间分配：栈由操作系统自动分配释放，存放函数的参数值，局部变量的值等；堆存储复杂类型(对象)，一般由程序员分配释放，若程序员不释放，由垃圾回收机制回收，分配方式倒是类似于链表。</span><br></pre></td></tr></table></figure>
 <p>3、获取变量类型：typeof</p>
 <p>4、数据类型转换</p>
 <ul>
@@ -270,7 +271,7 @@
 <p>6、运算符优先级：（），一元，算数，关系，相等，逻辑，赋值</p>
 <p>7、常用语句：if，switch，while，do…while，for，continue，break</p>
 <p>8、调试</p>
-<h2 id="五、数组基础"><a href="#五、数组基础" class="headerlink" title="五、数组基础"></a>五、数组基础</h2><p>1、创建数组</p>
+<h2 id="五、数组基础Array"><a href="#五、数组基础Array" class="headerlink" title="五、数组基础Array"></a>五、数组基础Array</h2><p>1、创建数组</p>
 <ul>
 <li>Array构造器：var arr = new Array()；</li>
 <li>数组字面量：var arr = [1, 2, 2]；</li>
@@ -325,7 +326,137 @@
 <li>every，filter，map，some</li>
 <li>forEach：相当于for循环</li>
 </ul>
-<h2 id="六、函数"><a href="#六、函数" class="headerlink" title="六、函数"></a>六、函数</h2>
+<h2 id="六、函数Function"><a href="#六、函数Function" class="headerlink" title="六、函数Function"></a>六、函数Function</h2><p>1、定义：把一段相对独立的具有特定功能的代码块封装起来，形成一个独立实体，就是函数，起个名字（函数名），在后续开发中可以反复调用</p>
+<ul>
+<li>函数声明</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">// 函数体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>函数表达式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 函数体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>特点：</p>
+<p>函数声明的时候，函数体并不会执行，只要当函数被调用的时候才会执行。<br>函数一般都用来干一件事情，需用使用动词+名词，表示做一件事情 <code>tellStory</code> <code>sayHello</code>等</p>
+</li>
+</ul>
+<p>2、调用：函数名();   函数体只有在调用的时候才会执行，调用需要()进行调用。可以调用多次(重复使用)。</p>
+<p>3、参数</p>
+<ul>
+<li>形式参数：在声明一个函数的时候，为了函数的功能更加灵活，有些值是固定不了的，对于这些固定不了的值。我们可以给函数设置参数。这个参数没有具体的值，仅仅起到一个占位置的作用，我们通常称之为形式参数，也叫形参。</li>
+<li>实际参数：如果函数在声明时，设置了形参，那么在函数调用的时候就需要传入对应的参数，我们把传入的参数叫做实际参数，也叫实参。</li>
+</ul>
+<p>4、返回值：可以通过变量接收。</p>
+<ul>
+<li>如果函数没有显示的使用 return语句 ，那么函数有默认的返回值：undefined</li>
+<li>如果函数使用 return语句，那么跟再return后面的值，就成了函数的返回值</li>
+<li>如果函数使用 return语句，但是return后面没有任何值，那么函数的返回值也是：undefined</li>
+<li>函数使用return语句后，这个函数会在执行完 return 语句之后停止并立即退出，也就是说return后面的所有其他代码都不会再执行。</li>
+</ul>
+<p>5、arguments的使用：JavaScript中，arguments对象是比较特别的一个对象，实际上是当前函数的一个内置属性。也就是说所有函数都内置了一个arguments对象，arguments对象中存储了传递的所有的实参。arguments是一个伪数组，因此及可以进行遍历。</p>
+<p>6、匿名函数：没有名字的函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">将匿名函数赋值给一个变量，这样就可以通过变量进行调用</span><br><span class="line">匿名函数自调用：</span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  alert(<span class="number">123</span>);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>关于自执行函数（匿名函数自调用）的作用：防止全局变量污染。</p>
+<h2 id="七、作用域"><a href="#七、作用域" class="headerlink" title="七、作用域"></a>七、作用域</h2><p>1、全局变量和局部变量</p>
+<ul>
+<li><p>全局变量</p>
+<p>在任何地方都可以访问到的变量就是全局变量，对应全局作用域</p>
+</li>
+<li><p>局部变量</p>
+<p>只在固定的代码片段内可访问到的变量，最常见的例如函数内部。对应局部作用域(函数作用域)</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">不使用var声明的变量是全局变量，不推荐使用。</span><br><span class="line">变量退出作用域之后会销毁，全局变量关闭网页或浏览器才会销毁</span><br></pre></td></tr></table></figure>
+<p>2、块级作用域：任何一对花括号（｛和｝）中的语句集都属于一个块，在这之中定义的所有变量在代码块外都是不可见的，我们称之为块级作用域。<strong>在es5之前没有块级作用域的的概念,只有函数作用域</strong></p>
+<p>3、词法作用域：变量的作用域是在定义时决定而不是执行时决定，也就是说词法作用域取决于源码，通过静态分析就能确定，因此词法作用域也叫做静态作用域。</p>
+<p>4、在 js 中词法作用域规则</p>
+<ul>
+<li>函数允许访问函数外的数据.</li>
+<li>整个代码结构中只有函数可以限定作用域.</li>
+<li>作用域规则首先使用提升规则分析</li>
+<li>如果当前作用规则中有名字了, 就不考虑外面的名字</li>
+</ul>
+<p>5、作用域链</p>
+<pre><code>只有函数可以制造作用域结构，那么只要是代码，就至少有一个作用域, 即全局作用域。凡是代码中有函数，那么这个函数就构成另一个作用域。如果函数中还有函数，那么在这个作用域中就又可以诞生一个作用域。
+
+将这样的所有的作用域列出来，可以有一个结构: 函数内指向函数外的链式结构。就称作作用域链。
+</code></pre><p>6、预解析：JavaScript解析器执行JavaScript代码的时候，分为两个过程，预解析过程和代码执行过程。预解析过程如下：</p>
+<ul>
+<li>把变量的声明提升到当前作用域的最前面，只会提升声明，不会提升赋值。</li>
+<li>把函数的声明提升到当前作用域的最前面，只会提升声明，不会提升调用。</li>
+<li>先提升var，再提升function</li>
+</ul>
+<h2 id="八、对象Object"><a href="#八、对象Object" class="headerlink" title="八、对象Object"></a>八、对象Object</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">JavaScript的对象是无序属性的集合。</span><br><span class="line">其属性可以包含基本值、对象或函数。对象就是一组没有顺序的值。我们可以把JavaScript中的对象想象成键值对，其中值可以是数据和函数。</span><br><span class="line">事物的特征在对象中用属性来表示。</span><br><span class="line">事物的行为在对象中用方法来表示。</span><br></pre></td></tr></table></figure>
+<p>1、对象创建方式</p>
+<ul>
+<li>对象字面量</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123;</span><br><span class="line">  name: <span class="string">'zs'</span>,</span><br><span class="line">  age: <span class="number">18</span>,</span><br><span class="line">  sex: <span class="literal">true</span>,</span><br><span class="line">  sayHi: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>new Object()创建对象</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">  person.name = <span class="string">'lisi'</span>;</span><br><span class="line">  person.age = <span class="number">35</span>;</span><br><span class="line">  person.job = <span class="string">'actor'</span>;</span><br><span class="line">  person.sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Hello,everyBody'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>工厂函数创建对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name, age, job</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">  person.name = name;</span><br><span class="line">  person.age = age;</span><br><span class="line">  person.job = job;</span><br><span class="line">  person.sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Hello,everyBody'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> person;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> p1 = createPerson(<span class="string">'张三'</span>, <span class="number">22</span>, <span class="string">'actor'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>自定义构造函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.age = age;</span><br><span class="line">  <span class="keyword">this</span>.job = job;</span><br><span class="line">  <span class="keyword">this</span>.sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  	<span class="built_in">console</span>.log(<span class="string">'Hello,everyBody'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Person(<span class="string">'张三'</span>, <span class="number">22</span>, <span class="string">'actor'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>2、属性和方法</p>
+<pre><code>如果一个变量属于一个对象所有，那么该变量就可以称之为该对象的一个属性，属性一般是名词，用来描述事物的特征
+如果一个函数属于一个对象所有，那么该函数就可以称之为该对象的一个方法，方法是动词，描述事物的行为和功能
+</code></pre><p>3、构造函数：是一种特殊的函数。主要用来在创建对象时初始化对象， 即为对象成员变量赋初始值，总与new运算符一起使用在创建对象的语句中。构造函数用于创建一类对象，首字母要大写，要和new一起使用才有意义。目的是给新对象加属性和方法。</p>
+<p>4、new关键字</p>
+<ul>
+<li>new会在内存中创建一个新的空对象</li>
+<li>new 会让this指向这个新的对象</li>
+<li>new会返回构造函数想要的新对象</li>
+</ul>
+<p>5、this</p>
+<ul>
+<li>函数在定义的时候this是不确定的，只有在调用的时候才可以确定</li>
+<li>一般函数直接执行，内部this指向全局window</li>
+<li>函数作为一个对象的方法，被该对象所调用，那么this指向的是该对象</li>
+<li>构造函数中的this其实是一个隐式对象，类似一个初始化的模型，所有方法和属性都挂载到了这个隐式对象身上，后续通过new关键字来调用，从而实现实例化</li>
+</ul>
+<p>6、对象的使用</p>
+<ul>
+<li><p>遍历</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">  obj[i] = i * <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(key + <span class="string">"=="</span> + obj[key]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除属性</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">  <span class="keyword">this</span>.name = <span class="string">'mm'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> fun(); </span><br><span class="line"><span class="built_in">console</span>.log(obj.name); <span class="comment">// mm </span></span><br><span class="line"><span class="keyword">delete</span> obj.name;</span><br><span class="line"><span class="built_in">console</span>.log(obj.name); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>7、Math对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.PI						<span class="comment">// 圆周率</span></span><br><span class="line"><span class="built_in">Math</span>.random()				<span class="comment">// 生成随机数</span></span><br><span class="line"><span class="built_in">Math</span>.floor()/<span class="built_in">Math</span>.ceil()	 <span class="comment">// 向下取整/向上取整</span></span><br><span class="line"><span class="built_in">Math</span>.round()				<span class="comment">// 取整，四舍五入</span></span><br><span class="line"><span class="built_in">Math</span>.abs()					<span class="comment">// 绝对值</span></span><br><span class="line"><span class="built_in">Math</span>.max()/<span class="built_in">Math</span>.min()		 <span class="comment">// 求最大和最小值</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Math</span>.sin()/<span class="built_in">Math</span>.cos()		 <span class="comment">// 正弦/余弦</span></span><br><span class="line"><span class="built_in">Math</span>.power()/<span class="built_in">Math</span>.sqrt()	 <span class="comment">// 求指数次幂/求平方根</span></span><br></pre></td></tr></table></figure>
+<p>8、Date对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取当前时间，UTC世界时间，距1970年1月1日（世界标准时间）起的毫秒数</span></span><br><span class="line"><span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">console</span>.log(now.valueOf());	<span class="comment">// 获取距1970年1月1日（世界标准时间）起的毫秒数</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Date</span>构造函数的参数</span><br><span class="line"><span class="number">1.</span> 毫秒数 <span class="number">1498099000356</span>		<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">1498099000356</span>)</span><br><span class="line"><span class="number">2.</span> 日期格式字符串  <span class="string">'2015-5-1'</span>	 <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2015-5-1'</span>)</span><br><span class="line"><span class="number">3.</span> 年、月、日……				  <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2015</span>, <span class="number">4</span>, <span class="number">1</span>)   <span class="comment">// 月份从0开始</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>获取日期的毫秒形式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="comment">// valueOf用于获取对象的原始值</span></span><br><span class="line"><span class="built_in">console</span>.log(date.valueOf())	</span><br><span class="line"></span><br><span class="line"><span class="comment">// HTML5中提供的方法，有兼容性问题</span></span><br><span class="line"><span class="keyword">var</span> now = <span class="built_in">Date</span>.now();	</span><br><span class="line"></span><br><span class="line"><span class="comment">// 不支持HTML5的浏览器，可以用下面这种方式</span></span><br><span class="line"><span class="keyword">var</span> now = + <span class="keyword">new</span> <span class="built_in">Date</span>();			<span class="comment">// 调用 Date对象的valueOf()</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>日期格式化方法</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">toString()		<span class="comment">// 转换成字符串</span></span><br><span class="line">valueOf()		<span class="comment">// 获取毫秒值</span></span><br><span class="line"><span class="comment">// 下面格式化日期的方法，在不同浏览器可能表现不一致，一般不用</span></span><br><span class="line">toDateString()</span><br><span class="line">toTimeString()</span><br><span class="line">toLocaleDateString()</span><br><span class="line">toLocaleTimeString()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>获取日期指定部分</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">getTime()  	  <span class="comment">// 返回毫秒数和valueOf()结果一样，valueOf()内部调用的getTime()</span></span><br><span class="line">getMilliseconds() </span><br><span class="line">getSeconds()  <span class="comment">// 返回0-59</span></span><br><span class="line">getMinutes()  <span class="comment">// 返回0-59</span></span><br><span class="line">getHours()    <span class="comment">// 返回0-23</span></span><br><span class="line">getDay()      <span class="comment">// 返回星期几 0周日   6周6</span></span><br><span class="line">getDate()     <span class="comment">// 返回当前月的第几天</span></span><br><span class="line">getMonth()    <span class="comment">// 返回月份，***从0开始***</span></span><br><span class="line">getFullYear() <span class="comment">//返回4位的年份  如 2016</span></span><br></pre></td></tr></table></figure>
+<p>9、String对象</p>
+<ul>
+<li>创建字符串对象</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'Hello World'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取字符串中字符的个数</span></span><br><span class="line"><span class="built_in">console</span>.log(str.length);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>字符串对象的常用方法</p>
+<p>字符串所有的方法，都不会修改字符串本身(字符串是不可变的)，操作完成会返回一个新的字符串</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1 字符方法</span></span><br><span class="line">charAt()    	<span class="comment">//获取指定位置处字符</span></span><br><span class="line">charCodeAt()  	<span class="comment">//获取指定位置处字符的ASCII码</span></span><br><span class="line">str[<span class="number">0</span>]   		<span class="comment">//HTML5，IE8+支持 和charAt()等效</span></span><br><span class="line"><span class="comment">// 2 字符串操作方法</span></span><br><span class="line">concat()   		<span class="comment">//拼接字符串，等效于+，+更常用</span></span><br><span class="line">slice()    		<span class="comment">//从start位置开始，截取到end位置，end取不到</span></span><br><span class="line">substring() 	<span class="comment">//从start位置开始，截取到end位置，end取不到</span></span><br><span class="line">substr()   		<span class="comment">//从start位置开始，截取length个字符</span></span><br><span class="line"><span class="comment">// 3 位置方法</span></span><br><span class="line">indexOf()   	<span class="comment">//返回指定内容在元字符串中的位置</span></span><br><span class="line">lastIndexOf() 	<span class="comment">//从后往前找，只找第一个匹配的</span></span><br><span class="line"><span class="comment">// 4 去除空白   </span></span><br><span class="line">trim()  		<span class="comment">//只能去除字符串前后的空白</span></span><br><span class="line"><span class="comment">// 5 大小写转换方法</span></span><br><span class="line">to(Locale)UpperCase() 	<span class="comment">//转换大写</span></span><br><span class="line">to(Locale)LowerCase() 	<span class="comment">//转换小写</span></span><br><span class="line"><span class="comment">// 6 其它</span></span><br><span class="line">search()</span><br><span class="line">replace()</span><br><span class="line">split()</span><br><span class="line">fromCharCode()</span><br><span class="line"><span class="comment">// String.fromCharCode(101, 102, 103);	 //把ASCII码转换成字符串</span></span><br></pre></td></tr></table></figure>
       
 
       
@@ -429,9 +560,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2019/09/05/Web API/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Web API
+        
+      </div>
+    </a>
+  
   
     <a href="/2019/08/28/CSS知识点/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+      <div class="article-nav-title">CSS知识点</div>
       <i class="icon-circle-right"></i>
     </a>
   
