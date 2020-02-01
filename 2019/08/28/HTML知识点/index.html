@@ -20,7 +20,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/08/28/HTML知识点/img/zifu.png">
 <meta property="og:image" content="http://yoursite.com/2019/08/28/HTML知识点/img/tt.png">
 <meta property="og:image" content="http://yoursite.com/2019/08/28/HTML知识点/img/input.png">
-<meta property="og:updated_time" content="2019-08-28T13:26:14.037Z">
+<meta property="og:updated_time" content="2019-09-18T08:48:56.576Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML知识点">
 <meta name="twitter:description" content="一、常见浏览器介绍1、浏览器是网页运行的平台，常用的浏览器有IE、火狐（Firefox）、谷歌（Chrome）、Safari和Opera等。我们平时称为五大浏览器。 2、浏览器内核：分成渲染引擎(layout engineer 或者 Rendering Engine)和 JS 引擎。 12345渲染引擎 它负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算">
@@ -258,12 +258,24 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"charset"</span> <span class="attr">content</span>=<span class="string">"utf-8"</span>&gt;</span>：HTML与XHTML中建议这样去写。</span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span>：HTML5的标签中建议这样去写</span><br></pre></td></tr></table></figure>
 <p>2、常用新标签</p>
 <ul>
-<li>header：定义文档的页眉</li>
-<li>nav：定义导航链接的部分</li>
-<li>footer：定义文档或节的页脚</li>
-<li>article：标签规定独立的自包含内容</li>
-<li>section：定义文档中的节（section、区段）</li>
-<li>aside：定义其所处内容之外的内容</li>
+<li><p>header：定义文档的页眉</p>
+</li>
+<li><p>nav：定义导航链接的部分</p>
+</li>
+<li><p>footer：定义文档或节的页脚</p>
+</li>
+<li><p>article：标签规定独立的自包含内容</p>
+</li>
+<li><p>section：定义文档中的节（section、区段）</p>
+</li>
+<li><p>aside：定义其所处内容之外的内容</p>
+</li>
+<li><p>datalist：标签定义选项列表，与input元素配合使用</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">list</span>=<span class="string">"star"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">datalist</span> <span class="attr">id</span>=<span class="string">"star"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span>&gt;</span>asas<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span>&gt;</span>asas<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">datalist</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>fieldset：可将表单内的相关元素分组、打包。和legend搭配使用。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">fieldset</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">legend</span>&gt;</span>user<span class="tag">&lt;/<span class="name">legend</span>&gt;</span></span><br><span class="line">    name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>/&gt;</span></span><br><span class="line">    password: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">fieldset</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <p>3、常用新属性</p>
 <table>
@@ -350,26 +362,27 @@
 <tr>
 <td><strong>time****</strong></td>
 <td><input type="time"></td>
-<td></td>
+<td>小时分钟</td>
 </tr>
 <tr>
 <td><strong>date****</strong></td>
 <td><input type="date"></td>
-<td></td>
+<td>年月日</td>
 </tr>
 <tr>
 <td><strong>datetime****</strong></td>
 <td><input type="datetime"></td>
-<td></td>
+<td>时间</td>
 </tr>
 <tr>
 <td><strong>month****</strong></td>
 <td><input type="month"></td>
-<td></td>
+<td>月年</td>
 </tr>
 <tr>
 <td><strong>week****</strong></td>
 <td><input type="week"></td>
+<td>星期 年</td>
 </tr>
 </tbody>
 </table>
@@ -498,8 +511,8 @@
     </a>
   
   
-    <a href="/2019/08/28/JS高级知识点/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">JS高级知识点</div>
+    <a href="/2019/08/11/Leetcode-110-Balanced-Binary-Tree/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Leetcode 110. Balanced Binary Tree</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -542,7 +555,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 RootUShaw
+    		&copy; 2020 RootUShaw
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -630,6 +643,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
             
             <div class="clearfix"></div>

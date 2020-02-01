@@ -23,7 +23,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/08/28/CSS知识点/img/no.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/08/28/CSS知识点/img/1498441839910.png">
 <meta property="og:image" content="http://yoursite.com/2019/08/28/CSS知识点/img/1498461096243.png">
-<meta property="og:updated_time" content="2019-09-05T13:00:36.460Z">
+<meta property="og:updated_time" content="2019-09-19T13:00:27.493Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS知识点">
 <meta name="twitter:description" content="一、CSS初识1、样式规则123456h1&amp;#123;color:red; font-size:25px;&amp;#125;1.选择器用于指定CSS样式作用的HTML对象，花括号内是对该对象设置的具体样式。2.属性和属性值以“键值对”的形式出现。3.属性是对指定的对象设置的样式属性，例如字体大小、文本颜色等。4.属性和属性值之间用英文“:”连接。5.多个“键值对”之间用英文“;”进行区分。 2、字体样式">
@@ -553,6 +553,8 @@
 <li>flex子项目在主轴的缩放比例，不指定flex属性，则不参与伸缩分配</li>
 <li>order控制子项目的排列顺序，正序方式排序，从小到大</li>
 </ul>
+<p>三列布局</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        section &#123;</span></span><br><span class="line"><span class="undefined">            width: 80%;</span></span><br><span class="line"><span class="undefined">            height: 200px;</span></span><br><span class="line"><span class="undefined">            border: 1px solid pink;</span></span><br><span class="line"><span class="undefined">            margin: 100px auto;</span></span><br><span class="line"><span class="css">            <span class="comment">/*父级盒子添加flex*/</span></span></span><br><span class="line"><span class="undefined">            display: flex;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="comment">/*子盒子添加份数，不指定flex属性，则不参与伸缩分配*/</span></span></span><br><span class="line"><span class="css">        <span class="selector-tag">section</span> <span class="selector-tag">div</span>&#123;<span class="attribute">height</span>: <span class="number">100%</span>; <span class="attribute">flex</span>:<span class="number">1</span>;&#125;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">section</span> <span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(1)</span>&#123;<span class="attribute">background-color</span>: pink;&#125;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">section</span> <span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(2)</span>&#123;<span class="attribute">background-color</span>: purple;&#125;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">section</span> <span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(3)</span>&#123;<span class="attribute">background-color</span>: pink;&#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h4 id="2、过渡（transition"><a href="#2、过渡（transition" class="headerlink" title="2、过渡（transition)"></a>2、过渡（transition)</h4><p>可以在不使用 Flash 动画或 JavaScript 的情况下，当元素从一种样式变换为另一种样式时为元素添加效果。transition: 要过渡的属性  花费时间  运动曲线  何时开始;</p>
 <table>
 <thead>
@@ -598,6 +600,73 @@
 <h4 id="4、动画（animation）"><a href="#4、动画（animation）" class="headerlink" title="4、动画（animation）"></a>4、动画（animation）</h4><p>可通过设置多个节点来精确控制一个或一组动画，常用来实现复杂的动画效果。</p>
 <p>animation:动画名称 动画时间 运动曲线  何时开始  播放次数  是否反方向;</p>
 <p><img src="img\1498461096243.png" alt="1498461096243"></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">keyframes</span> 动画名称 &#123;</span><br><span class="line">  from&#123; 开始位置 &#125;  0%</span><br><span class="line">  to&#123;  结束  &#125;  100%</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">animation-iteration-count:infinite;  无限循环播放</span><br><span class="line">animation-play-state:paused;   暂停动画&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="小汽车案例"><a href="#小汽车案例" class="headerlink" title="小汽车案例"></a>小汽车案例</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: white;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.animation</span> &#123;</span><br><span class="line">  <span class="attribute">animation-name</span>: goback;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">5s</span>;</span><br><span class="line">  <span class="attribute">animation-timing-function</span>: ease;</span><br><span class="line">  <span class="attribute">animation-iteration-count</span>: infinite;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">keyframes</span> goback &#123;</span><br><span class="line">  0%&#123;&#125;</span><br><span class="line">  49%&#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateX</span>(1000px);</span><br><span class="line">  &#125;</span><br><span class="line">  55%&#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateX</span>(1000px) <span class="built_in">rotateY</span>(180deg);</span><br><span class="line">  &#125;</span><br><span class="line">  95%&#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateX</span>(0) <span class="built_in">rotateY</span>(180deg);</span><br><span class="line">  &#125;</span><br><span class="line">  100%&#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateX</span>(0) <span class="built_in">rotateY</span>(0deg);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="八、BFC（块级格式化上下文）"><a href="#八、BFC（块级格式化上下文）" class="headerlink" title="八、BFC（块级格式化上下文）"></a>八、BFC（块级格式化上下文）</h2><p>BFC是一个独立的渲染区域，规定了内部块级元素如何布局，并且与这个区域外部毫不相干（有点清除浮动的感觉）</p>
+<p>元素的显示模式分为块级，行内，行内块等等。只有block，list-item和table元素才会产生BFC。</p>
+<h5 id="1、触发BFC的方式："><a href="#1、触发BFC的方式：" class="headerlink" title="1、触发BFC的方式："></a>1、触发BFC的方式：</h5><p>-float属性不为none</p>
+<p>-position为absolute或fixed</p>
+<p>-display为inline-block, table-cell, table-caption, flex, inline-flex</p>
+<p>-overflow不为visible。</p>
+<h5 id="2、BFC所具有的特性"><a href="#2、BFC所具有的特性" class="headerlink" title="2、BFC所具有的特性"></a>2、BFC所具有的特性</h5><ul>
+<li>在BFC中，盒子从顶端开始垂直地一个接一个地排列.</li>
+<li>盒子垂直方向的距离由margin决定。属于同一个BFC的两个相邻盒子的margin会发生重叠</li>
+<li>在BFC中，每一个盒子的左外边缘（margin-left）会触碰到容器的左边缘(border-left)（对于从右到左的格式来说，则触碰到右边缘）。</li>
+<li>BFC的区域不会与浮动盒子产生交集，而是紧贴浮动边缘。</li>
+<li>计算BFC的高度时，自然也会检测浮动或者定位的盒子高度。</li>
+</ul>
+<h5 id="3、用途"><a href="#3、用途" class="headerlink" title="3、用途"></a>3、用途</h5><ul>
+<li>清除元素内部浮动：只要把父元素设为BFC就可以清理子元素的浮动了，最常见的用法就是在父元素上设置overflow: hidden样式，对于IE6加上zoom:1就可以了。</li>
+<li>解决外边距合并问题：属于同一个BFC的两个相邻盒子的margin会发生重叠，那么我们创建不属于同一个BFC，就不会发生margin重叠了。</li>
+<li>制作右侧自适应的盒子问题：普通流体元素BFC后，为了和浮动元素不产生任何交集，顺着浮动边缘形成自己的封闭上下文。</li>
+</ul>
+<h2 id="九、补充知识"><a href="#九、补充知识" class="headerlink" title="九、补充知识"></a>九、补充知识</h2><h5 id="1、渐进增强和优雅降级"><a href="#1、渐进增强和优雅降级" class="headerlink" title="1、渐进增强和优雅降级"></a>1、渐进增强和优雅降级</h5><p>渐进增强 progressive enhancement：针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。</p>
+<p>优雅降级 graceful degradation：一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。</p>
+<p>推荐优雅降级。</p>
+<h5 id="2、浏览器前缀"><a href="#2、浏览器前缀" class="headerlink" title="2、浏览器前缀"></a>2、浏览器前缀</h5><table>
+<thead>
+<tr>
+<th>浏览器前缀</th>
+<th>浏览器</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-webkit-</td>
+<td>Google Chrome, Safari, Android Browser</td>
+</tr>
+<tr>
+<td>-moz-</td>
+<td>Firefox</td>
+</tr>
+<tr>
+<td>-o-</td>
+<td>Opera</td>
+</tr>
+<tr>
+<td>-ms-</td>
+<td>Internet Explorer, Edge</td>
+</tr>
+<tr>
+<td>-khtml-</td>
+<td>Konqueror</td>
+</tr>
+</tbody>
+</table>
+<h5 id="3、单行文本溢出隐藏"><a href="#3、单行文本溢出隐藏" class="headerlink" title="3、单行文本溢出隐藏"></a>3、单行文本溢出隐藏</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    p&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">white-space</span>: <span class="selector-tag">nowrap</span>; <span class="comment">/*文本一行显示*/</span></span></span><br><span class="line"><span class="css">        <span class="selector-tag">overflow</span><span class="selector-pseudo">:hidden</span>;  <span class="comment">/*超出隐藏*/</span></span></span><br><span class="line"><span class="css">        <span class="selector-tag">text-overflow</span><span class="selector-pseudo">:ellipsis</span>;  <span class="comment">/*省略号*/</span></span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    单行文本溢出隐藏单行文本溢出隐藏单行文本溢出隐藏单行文本溢出隐藏单行文本溢出隐藏单行文本溢出隐藏单行文本溢出隐藏单行文本溢出隐藏单行文本溢出隐藏单行文本溢出隐藏单行文本溢出隐藏单行文本溢出隐藏单行文本溢出隐藏单行文本溢出隐藏</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="4、多行文本溢出隐藏"><a href="#4、多行文本溢出隐藏" class="headerlink" title="4、多行文本溢出隐藏"></a>4、多行文本溢出隐藏</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    p&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">-webkit-line-clamp</span>: 2; <span class="comment">/*限定块元素文本显示的行数*/</span></span></span><br><span class="line"><span class="css">        <span class="selector-tag">display</span>: <span class="selector-tag">-webkit-box</span>;   <span class="comment">/*将对象作为弹性的伸缩盒子显示*/</span></span></span><br><span class="line"><span class="css">        <span class="selector-tag">-webkit-box-orient</span>: <span class="selector-tag">vertical</span>;  <span class="comment">/*设置伸缩盒子对象内子对象的排列方式*/</span></span></span><br><span class="line"><span class="css">        <span class="selector-tag">overflow</span><span class="selector-pseudo">:hidden</span>;  <span class="comment">/*超出隐藏*/</span></span></span><br><span class="line"><span class="css">        <span class="selector-tag">text-overflow</span><span class="selector-pseudo">:ellipsis</span>;  <span class="comment">/*省略号*/</span></span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    单行文本溢出隐藏单行文本溢出隐藏单行文本溢出隐藏单行文本溢出隐藏单行文本溢出隐藏单行文本溢出隐藏单行文本溢出隐藏单行文本溢出隐藏单行文本溢出隐藏单行文本溢出隐藏单行文本溢出隐藏单行文本溢出隐藏单行文本溢出隐藏单行文本溢出隐藏</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="5、垂直居中三种通用方法"><a href="#5、垂直居中三种通用方法" class="headerlink" title="5、垂直居中三种通用方法"></a>5、垂直居中三种通用方法</h5><ul>
+<li>先让盒子的上下边缘和父盒子的水平中心线重叠，然后再让子盒子往回移动自身的一半距离</li>
+<li>使用margin计算盒子的上下边距，使盒子居中</li>
+<li>使用vertical-align：middle</li>
+</ul>
+<h5 id="6、水平居中的四种通用方法"><a href="#6、水平居中的四种通用方法" class="headerlink" title="6、水平居中的四种通用方法"></a>6、水平居中的四种通用方法</h5><ul>
+<li>margin：0 auto</li>
+<li>计算margin左右间距</li>
+<li>先让盒子左右边缘和父盒子垂直中心线重叠，然后把子盒子往回移动自身宽度的一半</li>
+<li>盒子转换成行内块，使用text-align：center</li>
+</ul>
 
       
 
@@ -756,7 +825,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 RootUShaw
+    		&copy; 2020 RootUShaw
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -844,6 +913,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
             
             <div class="clearfix"></div>
