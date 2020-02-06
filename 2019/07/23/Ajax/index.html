@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Ajax | RootUShaw</title>
+  <title>Ajax+PHP基础语法 | RootUShaw</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、同源策略，跨域和解决办法  同源策略：发送请求的URL地址与服务器地址必须是同一域名下的。  跨域：不同域之间相互请求资源，JS出于安全方面的考虑，不允许跨域调用其他页面的对象。  解决方法一：使用代理，在同域名的web服务器端创建一个代理，比如上海服务器上有一个服务www.shanghai.com/service.php，北京服务器上有一个服务www.beijing.com/proxy-sh">
+  <meta name="description" content="一、Ajax1、同源策略，跨域和解决办法  同源策略：发送请求的URL地址与服务器地址必须是同一域名下的。  跨域：不同域之间相互请求资源，JS出于安全方面的考虑，不允许跨域调用其他页面的对象。  解决方法一：使用代理，在同域名的web服务器端创建一个代理，比如上海服务器上有一个服务www.shanghai.com/service.php，北京服务器上有一个服务www.beijing.com/pr">
 <meta name="keywords" content="前端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ajax">
+<meta property="og:title" content="Ajax+PHP基础语法">
 <meta property="og:url" content="http://yoursite.com/2019/07/23/Ajax/index.html">
 <meta property="og:site_name" content="RootUShaw">
-<meta property="og:description" content="1、同源策略，跨域和解决办法  同源策略：发送请求的URL地址与服务器地址必须是同一域名下的。  跨域：不同域之间相互请求资源，JS出于安全方面的考虑，不允许跨域调用其他页面的对象。  解决方法一：使用代理，在同域名的web服务器端创建一个代理，比如上海服务器上有一个服务www.shanghai.com/service.php，北京服务器上有一个服务www.beijing.com/proxy-sh">
+<meta property="og:description" content="一、Ajax1、同源策略，跨域和解决办法  同源策略：发送请求的URL地址与服务器地址必须是同一域名下的。  跨域：不同域之间相互请求资源，JS出于安全方面的考虑，不允许跨域调用其他页面的对象。  解决方法一：使用代理，在同域名的web服务器端创建一个代理，比如上海服务器上有一个服务www.shanghai.com/service.php，北京服务器上有一个服务www.beijing.com/pr">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-25T13:00:12.243Z">
+<meta property="og:updated_time" content="2020-02-05T13:30:01.770Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ajax">
-<meta name="twitter:description" content="1、同源策略，跨域和解决办法  同源策略：发送请求的URL地址与服务器地址必须是同一域名下的。  跨域：不同域之间相互请求资源，JS出于安全方面的考虑，不允许跨域调用其他页面的对象。  解决方法一：使用代理，在同域名的web服务器端创建一个代理，比如上海服务器上有一个服务www.shanghai.com/service.php，北京服务器上有一个服务www.beijing.com/proxy-sh">
+<meta name="twitter:title" content="Ajax+PHP基础语法">
+<meta name="twitter:description" content="一、Ajax1、同源策略，跨域和解决办法  同源策略：发送请求的URL地址与服务器地址必须是同一域名下的。  跨域：不同域之间相互请求资源，JS出于安全方面的考虑，不允许跨域调用其他页面的对象。  解决方法一：使用代理，在同域名的web服务器端创建一个代理，比如上海服务器上有一个服务www.shanghai.com/service.php，北京服务器上有一个服务www.beijing.com/pr">
   
     <link rel="alternative" href="/atom.xml" title="RootUShaw" type="application/atom+xml">
   
@@ -162,7 +162,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Ajax
+      Ajax+PHP基础语法
     </h1>
   
 
@@ -175,7 +175,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1、同源策略，跨域和解决办法</p>
+        <h2 id="一、Ajax"><a href="#一、Ajax" class="headerlink" title="一、Ajax"></a>一、Ajax</h2><p>1、同源策略，跨域和解决办法</p>
 <ul>
 <li><p>同源策略：发送请求的URL地址与服务器地址必须是同一域名下的。</p>
 </li>
@@ -184,12 +184,23 @@
 <li><p>解决方法一：使用代理，在同域名的web服务器端创建一个代理，比如上海服务器上有一个服务<a href="http://www.shanghai.com/service.php，北京服务器上有一个服务www.beijing.com/proxy-shanghaiservice.php，在后端请求上海服务，再把响应结果返回给前端" target="_blank" rel="noopener">www.shanghai.com/service.php，北京服务器上有一个服务www.beijing.com/proxy-shanghaiservice.php，在后端请求上海服务，再把响应结果返回给前端</a></p>
 </li>
 <li><p>解决方法二：JSONP，只能对GET请求进行改造</p>
+<p>静态script标签的src属性进行跨域请求，使用前必须要先加载，顺序和传参比较受限制。标签内的async属性是异步加载，默认是同步的</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--在www.aaa.com页面中--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    function jsonp(json)&#123;</span></span><br><span class="line"><span class="undefined">        alert(json["name"]); //a域名是声明，b域名是调用</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span> = <span class="string">"http://www.bbb.com/jsonp.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--在www.bbb.com页面中--&gt;</span></span><br><span class="line">jsonp(&#123;'name':'zhou', 'age':21&#125;);</span><br></pre></td></tr></table></figure>
+<p>动态创建script标签，通过标签的src属性发送请求，这种请求是异步请求，服务器返回一个函数调用就可以了</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span> = <span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">	var script = document.createElement('script');</span></span><br><span class="line"><span class="undefined">	script.src = "http://baidu.com";</span></span><br><span class="line"><span class="undefined">    var haed = document.getElementsByTagName('head')[0];</span></span><br><span class="line"><span class="undefined">    head.appendChid(script);</span></span><br><span class="line"><span class="undefined">    function foo(data)&#123;</span></span><br><span class="line"><span class="undefined">        alert(data);</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">return foo('123');</span><br></pre></td></tr></table></figure>
+<p>jQuery封装的jsonp类型请求</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        $(<span class="string">"#btn"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">            $.ajax(&#123;</span><br><span class="line">                <span class="keyword">async</span> : <span class="literal">true</span>,</span><br><span class="line">                url : <span class="string">"https://api.douban.com/v2/book/search"</span>,</span><br><span class="line">                type : <span class="string">"GET"</span>,</span><br><span class="line">                dataType : <span class="string">"jsonp"</span>, <span class="comment">// 返回的数据类型，设置为JSONP方式</span></span><br><span class="line">                jsonp : <span class="string">'callback'</span>, <span class="comment">//指定一个查询参数名称来覆盖默认的 jsonp 回调参数名 callback</span></span><br><span class="line">                jsonpCallback: <span class="string">'handleResponse'</span>, <span class="comment">//设置回调函数名</span></span><br><span class="line">                data : &#123;</span><br><span class="line">                    q : <span class="string">"javascript"</span>, </span><br><span class="line">                    count : <span class="number">1</span></span><br><span class="line">                &#125;, </span><br><span class="line">                success: <span class="function"><span class="keyword">function</span>(<span class="params">response, status, xhr</span>)</span>&#123;</span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="string">'状态为：'</span> + status + <span class="string">',状态是：'</span> + xhr.statusText);</span><br><span class="line">                    <span class="built_in">console</span>.log(response);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line"><span class="comment">//利用getJSON来实现，只要在地址中加上callback=?参数即可</span></span><br><span class="line">$.getJSON(<span class="string">"https://api.douban.com/v2/book/search?q=javascript&amp;count=1&amp;callback=?"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">                <span class="built_in">console</span>.log(data);</span><br><span class="line">            &#125;);</span><br></pre></td></tr></table></figure>
+<p>只能使用计时器判断跨域请求是否收到了响应，其他域不安全会携带恶意代码。</p>
 </li>
-<li><p>解决方法三：HTML5提供的XMLHttpRequest level2已经实现了跨域访问，但是IE10一下的版本不支持，只需要在服务器端做一下小改造即可：</p>
+<li><p>解决方法三：HTML5提供的XMLHttpRequest level2已经实现了跨域访问，但是IE10以下的版本不支持，只需要在服务器端做一下小改造即可：</p>
 <p>header(‘Access-Control-Allow-Origin:*’);</p>
 <p>header(‘Access-Control-Allow-Methods:POST,GET’);</p>
 </li>
+<li><p>解决方案四：document.domain + iframe可以实现同一个一级域名同端口同协议的跨域</p>
+</li>
+<li>解决方案五：location.hash + iframe。利用location.hash来进行传值。在url:  <a href="http://a.com#helloword中的‘#helloworld’就是location.hash，改变hash并不会导致页面刷新，所以可以利用hash值来进行数据传递，当然数据容量是有限的。假设域名a.com下的文件cs1.html要和cnblogs.com域名下的cs2.html传递信息，cs1.html首先自动创建一个隐藏的iframe，iframe的src指向cnblogs.com域名下的cs2.html页面，这时的hash值可以做参数传递用。cs2.html响应请求后再将通过修改cs1.html的hash值来传递数据。缺点是数据直接暴露在了url中，数据容量和类型都有限" target="_blank" rel="noopener">http://a.com#helloword中的‘#helloworld’就是location.hash，改变hash并不会导致页面刷新，所以可以利用hash值来进行数据传递，当然数据容量是有限的。假设域名a.com下的文件cs1.html要和cnblogs.com域名下的cs2.html传递信息，cs1.html首先自动创建一个隐藏的iframe，iframe的src指向cnblogs.com域名下的cs2.html页面，这时的hash值可以做参数传递用。cs2.html响应请求后再将通过修改cs1.html的hash值来传递数据。缺点是数据直接暴露在了url中，数据容量和类型都有限</a></li>
+<li>解决方案六：window.name + iframe。window.name的特点是在当前页设置的值, 在页面重新加载(非同域也可以)后, 值依然不变。比如A有一个iframe，可以将iframe的src先设置成和B一样的，然后再改成和A一样的就可以了</li>
+<li>解决方案七：window.postMessage。HTML5的一个方法，有的浏览器可能不支持</li>
 </ul>
 <p>2、AJAX全称：异步的JavaScript和XML，不是某种编程语言，只是一种在无需重新加载整个网页的情况下能够更新部分网页的技术。异步的方式是通过XMLHttpRequest实现的。</p>
 <p>3、XMLHttpRequest对象的创建：</p>
@@ -207,8 +218,11 @@
 <p>5、HTTP请求一般包含四部分：请求的方法或动作，正在请求的URL，请求头，请求体。</p>
 <p>6、GET和POST请求</p>
 <ul>
-<li>GET：默认请求方法，一般用于信息获取，使用URL传递参数，对发送信息的数量有限制，是幂等的（就是查多少次都不会对数据库中的信息有影响）</li>
-<li>POST：一般用于修改服务器上的资源，对发送信息的数量无限制</li>
+<li><p>GET：默认请求方法，一般用于信息获取，使用URL传递参数，对发送信息的数量有限制，是幂等的（就是查多少次都不会对数据库中的信息有影响），需要转码</p>
+</li>
+<li><p>POST：一般用于修改服务器上的资源，对发送信息的数量无限制，不需要转码，但是需要设置请求头</p>
+<p>xhr.setRequestHeader(“Content-Type”, “application/x-www-form-urlencoded”);</p>
+</li>
 </ul>
 <p>7、HTTP响应一般由三部分组成：一个数字和文字组成的状态码，响应头，响应体。</p>
 <p>8、HTTP状态码：</p>
@@ -224,7 +238,7 @@
 <li>open(method, url, async)：发送请求方法，请求地址，同步(false)/异步(true)(默认)</li>
 <li>send(string)：在POST请求里一般要填写参数，否则请求没有什么意义</li>
 </ul>
-<p>10、XMLHttpRequest取得相应：</p>
+<p>10、XMLHttpRequest取得响应：</p>
 <ul>
 <li><p>responseText：获得字符串形式的响应数据</p>
 </li>
@@ -237,14 +251,14 @@
 <li><p>getResponseHeader()：查询响应中的某个字段的值</p>
 </li>
 <li><p>readyState属性：0-请求未初始化（open未调用），1-服务器连接已建立（open已调用），2-请求已接收，3-请求处理中，4-请求已完成</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> request = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">request.open(<span class="string">"GET"</span>, <span class="string">"get.php"</span>, <span class="literal">true</span>);</span><br><span class="line">request.send();</span><br><span class="line">request.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(request.readyState === <span class="number">4</span> &amp;&amp; request.status === <span class="number">200</span>)&#123;</span><br><span class="line">        <span class="comment">//do sth, such as request,responseText</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> request = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">request.open(<span class="string">"GET"</span>, <span class="string">"get.php?参数"</span>, <span class="literal">true</span>);</span><br><span class="line">request.send(<span class="literal">null</span>);</span><br><span class="line">request.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(request.readyState === <span class="number">4</span> &amp;&amp; request.status === <span class="number">200</span>)&#123;</span><br><span class="line">        <span class="comment">//do sth, such as request,responseText</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>11、服务器端：运行PHP(OR OTHER)→XAMMP，<a href="https://www.apachefriends.org/download.html→配置web服务器用于本地测试" target="_blank" rel="noopener">https://www.apachefriends.org/download.html→配置web服务器用于本地测试</a></p>
 <p>12、PHP服务端代码测试可以使用Fiddler</p>
 <p>13、POST请求要加上Content-Type: application/x-www-form-urlencoded</p>
-<p>14、JSON：JS对象表示法，是存储和交换文本信息的语法，采用键值对的方式来组织，独立于语言。</p>
-<p>15、在JS中解析JSON：eval和JSON.parse，在代码中使用eval很危险，因为他不仅会解析JSON，还会执行其中的方法，特别是用它执行第三方的JSON数据时。所以尽可能的使用第二种方法解析字符串本身，这种方法还可以捕捉JSON中的语法错误。</p>
+<p>14、JSON：JS对象表示法，是存储和交换文本信息的语法，采用键值对的方式来组织，独立于语言。和JS对象的区别就是没有变量，结尾没有分号，且里面的键必须用双引号包住</p>
+<p>15、在JS中解析JSON：eval和JSON.parse，在代码中使用eval很危险，因为他不仅会解析JSON，还会执行其中的方法，特别是用它执行第三方的JSON数据时。所以尽可能的使用第二种方法解析字符串本身，这种方法还可以捕捉JSON中的语法错误。JSON.stringify()用于把对象转化成字符串</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> jsondata = <span class="string">'&#123;"staff": [&#123;"name" : "zhang", "age":21&#125;, &#123;"name" : "zhou", "age":18&#125;, &#123;"name" : "cheng", "age":23&#125;]&#125;'</span>;</span><br><span class="line"><span class="comment">//方法一</span></span><br><span class="line"><span class="keyword">var</span> jsonobj = <span class="built_in">eval</span>(<span class="string">'('</span> + jsondata +<span class="string">')'</span>);</span><br><span class="line"><span class="comment">//方法二</span></span><br><span class="line"><span class="keyword">var</span> jsonobj = <span class="built_in">JSON</span>.parse(jsondata);</span><br><span class="line">alert(jsonobj.staff[<span class="number">0</span>].name);</span><br></pre></td></tr></table></figure>
 <p>16、在线JSON校验工具：JSONLint</p>
 <p>17、jQuery实现AJAX：jQuery.ajax([settings])</p>
@@ -256,6 +270,16 @@
 <li>success：一个方法，请求成功后的回调函数，传入返回后的数据，以及包含成功代码的字符串</li>
 <li>error：一个方法，请求失败时调用，传入XMLHttpRequest对象</li>
 </ul>
+<p>18、搭建服务器环境：wamp集成环境</p>
+<ul>
+<li>windows操作系统</li>
+<li>Apache提供静态资源服务（HTML页面，JS文件，CSS文件，图片……）</li>
+<li>MySQL数据库</li>
+<li>PHP编程语言，可以用来开发网站（动态网站）</li>
+</ul>
+<p>19、隐藏帧技术实现局部更新（在ajax出现之前使用的技术）：在页面中添加一个iframe子页面，把响应信息反馈到iframe中，form的target指向iframe。这种方式在网页中添加了无效代码，显得啰嗦</p>
+<p>20、XML数据：是以前使用的一种数据格式，现在多用JSON，因为XML元数据占用的数据量比较大，有效数据少，不利于大量数据的网络传输，解析起来不太方便</p>
+<p>21、异步效果的底层原理：和js的事件处理机制息息相关，因为JS是单线程的，所以事件队列中的任务执行条件是主线程空闲且任务满足触发条件（延时时间已到，特定事件被触发且服务端有数据返回）才会执行</p>
 
       
 

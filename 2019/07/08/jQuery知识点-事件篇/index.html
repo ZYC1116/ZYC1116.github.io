@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="RootUShaw">
 <meta property="og:description" content="一、鼠标事件1、click与dbclick事件：click方法用于监听用户单击操作，dbclick监听双击操作。在同一元素上同时绑定 click 和 dbclick 事件是不可取的。  $ele.click()：不带任何参数一般是用来指定触发一个事件，用的比较少。 $ele.click( handler(eventObject) )：触发点击操作会执行回调 handler函数，方法中的this是指">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-23T14:11:10.317Z">
+<meta property="og:updated_time" content="2020-02-04T13:30:50.300Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery知识点-事件篇">
 <meta name="twitter:description" content="一、鼠标事件1、click与dbclick事件：click方法用于监听用户单击操作，dbclick监听双击操作。在同一元素上同时绑定 click 和 dbclick 事件是不可取的。  $ele.click()：不带任何参数一般是用来指定触发一个事件，用的比较少。 $ele.click( handler(eventObject) )：触发点击操作会执行回调 handler函数，方法中的this是指">
@@ -213,7 +213,7 @@
 <li>不区分小键盘和主键盘的数字字符</li>
 <li>主要用来接收字母、数字等ANSI字符</li>
 </ul>
-<h2 id="四、事件绑定和解绑"><a href="#四、事件绑定和解绑" class="headerlink" title="四、事件绑定和解绑"></a>四、事件绑定和解绑</h2><p>1、 on()：是官方推荐的绑定事件的一个方法。</p>
+<h2 id="四、事件绑定和解绑"><a href="#四、事件绑定和解绑" class="headerlink" title="四、事件绑定和解绑"></a>四、事件绑定和解绑</h2><p>1、 on()：是官方推荐的绑定事件的一个方法。（相当于是bind和delegate的结合），非常适合为动态添加的元素添加事件</p>
 <ul>
 <li><p>基本用法：.on( events ,[ selector ] ,[ data ] )，可以自定义事件名。</p>
 </li>
@@ -230,7 +230,9 @@
 <p>事件绑定在最上层div元素上，当用户触发在a元素上，事件将往上冒泡，一直会冒泡在div元素上。如果提供了第二参数，那么事件在往上冒泡的过程中遇到了选择器匹配的元素，将会触发事件回调函数。</p>
 </li>
 </ul>
-<p>2、off()：卸载事件。不带参数会卸载所有事件，卸载多个事件可以用空格分开。</p>
+<p>2、off()：卸载事件。不带参数会卸载所有事件，卸载多个事件可以用空格分开。还有unBind()事件，但是不推荐。如果父级元素和子级元素都是通过正常的方式绑定事件，如果通过off解绑，父级元素的事件解绑，子事件不会。如果子元素是通过父级元素调用delegate方式绑定的事件，父级元素使用off方式解绑，这时父元素和子元素的相同事件都会被解绑</p>
+<p>3、.bind({“event”：function(){}, “event”：function(){}}): 可以给对象添加一个或多个事件</p>
+<p>4、.delegate(“标签”，“事件”，“匿名函数”)：为调用该事件的元素的内部元素绑定事件</p>
 <h2 id="五、事件对象"><a href="#五、事件对象" class="headerlink" title="五、事件对象"></a>五、事件对象</h2><p>1、事件对象是用来记录一些事件发生时的相关信息的对象。</p>
 <p>2、事件对象只有事件发生时才会产生，并且只能是事件处理函数内部访问，在所有事件处理函数运行结束后，事件对象就被销毁。</p>
 <p>3、event.target代表当前触发事件的元素，可以通过当前元素对象的一系列属性来判断是不是我们想要的元素。通常用于比较 event.target 和 this 来确定事件是不是由于冒泡而触发的。经常用于事件冒泡时处理事件委托。</p>
@@ -244,8 +246,11 @@
 <p>。冒泡前的当前触发事件的DOM对象，等同于this</p>
 <p>11、this和event.target的区别：s中事件是会冒泡的，所以this是可以变化的，但event.target不会变化，它永远是直接接受事件的目标DOM元素。都是DOM对象，可以转换为jQuery对象。</p>
 <p>12、为JS动态生成的网页元素添加事件时通常需要使用事件代理来实现。</p>
-<h2 id="六、自定义事件"><a href="#六、自定义事件" class="headerlink" title="六、自定义事件"></a>六、自定义事件</h2><p>1、trigger事件：根据绑定到匹配元素的给定的事件类型执行所有的处理程序和行为。会在DOM树上冒泡。</p>
-<p>2、triggerHandler事件：触发通过 jQuery 绑定的事件处理函数，而不触发原生的事件。不会触发浏览器默认行为，仅影响第一个匹配到的元素，不会冒泡，返回最后一个处理的事件的返回值。</p>
+<h2 id="六、自定义事件"><a href="#六、自定义事件" class="headerlink" title="六、自定义事件"></a>六、自定义事件</h2><p>1、trigger事件：根据绑定到匹配元素的给定的事件类型执行所有的处理程序和行为。会在DOM树上冒泡。需要传递事件名</p>
+<p>2、triggerHandler事件：触发通过 jQuery 绑定的事件处理函数，而不触发原生的事件。不会触发浏览器默认行为，仅影响第一个匹配到的元素，不会冒泡，返回最后一个处理的事件的返回值。需要传递事件名</p>
+<p>3、return false可以直接取消事件冒泡，还可以取消浏览器的默认事件</p>
+<p>4、链式编程原理：其实就是在完成一个事件函数之后，函数返回了当前对象</p>
+<p>5、多库问题涉及到释放控制权的问题，通过类似var xy = $.noConflict()，就相当于用xy代替$，其他库就可以使用这个符号了</p>
 
       
 
