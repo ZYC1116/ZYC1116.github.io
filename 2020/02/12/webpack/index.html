@@ -6,17 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>前端 | RootUShaw</title>
+  <title>webpack | RootUShaw</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="面试">
+  <meta name="description" content="题外话：npm下载包的时候一般是从registry.npmjs.org下载，这是一个国外网站，所以速度较慢，nrm提供了一些常用的NPM包镜像地址，可以通过npm命令安装。 在网页中会引入一些常见的静态资源：  JS：.js, .jsx, .coffee, .ts（一种中间语言，通过编译器可以编译成JS语言） CSS：.css, .less, .sass, .scss（ Images：.jpg,">
+<meta name="keywords" content="前端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端">
-<meta property="og:url" content="http://yoursite.com/2020/02/03/前端编程题/index.html">
+<meta property="og:title" content="webpack">
+<meta property="og:url" content="http://yoursite.com/2020/02/12/webpack/index.html">
 <meta property="og:site_name" content="RootUShaw">
+<meta property="og:description" content="题外话：npm下载包的时候一般是从registry.npmjs.org下载，这是一个国外网站，所以速度较慢，nrm提供了一些常用的NPM包镜像地址，可以通过npm命令安装。 在网页中会引入一些常见的静态资源：  JS：.js, .jsx, .coffee, .ts（一种中间语言，通过编译器可以编译成JS语言） CSS：.css, .less, .sass, .scss（ Images：.jpg,">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-02-06T11:37:43.989Z">
+<meta property="og:updated_time" content="2020-02-14T09:35:20.578Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端">
+<meta name="twitter:title" content="webpack">
+<meta name="twitter:description" content="题外话：npm下载包的时候一般是从registry.npmjs.org下载，这是一个国外网站，所以速度较慢，nrm提供了一些常用的NPM包镜像地址，可以通过npm命令安装。 在网页中会引入一些常见的静态资源：  JS：.js, .jsx, .coffee, .ts（一种中间语言，通过编译器可以编译成JS语言） CSS：.css, .less, .sass, .scss（ Images：.jpg,">
   
     <link rel="alternative" href="/atom.xml" title="RootUShaw" type="application/atom+xml">
   
@@ -152,27 +155,120 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-前端编程题" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-webpack" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      前端
+      webpack
     </h1>
   
 
         
-        <a href="/2020/02/03/前端编程题/" class="archive-article-date">
-  	<time datetime="2020-02-03T10:10:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-03</time>
+        <a href="/2020/02/12/webpack/" class="archive-article-date">
+  	<time datetime="2020-02-12T09:07:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>题外话：npm下载包的时候一般是从registry.npmjs.org下载，这是一个国外网站，所以速度较慢，nrm提供了一些常用的NPM包镜像地址，可以通过npm命令安装。</p>
+<p><strong>在网页中会引入一些常见的静态资源：</strong></p>
+<ul>
+<li>JS：.js, .jsx, .coffee, .ts（一种中间语言，通过编译器可以编译成JS语言）</li>
+<li>CSS：.css, .less, .sass, .scss（</li>
+<li>Images：.jpg, .png, .gif, .bmp, .svg</li>
+<li>字体文件（Fonts)：.svg, .ttf, .eot, .woff, .woff2</li>
+<li>模板文件：.ejs, .jade, .vue(这是在webpack中定义组件的方式)</li>
+</ul>
+<p><strong>这些静态资源多了之后会产生一些问题：</strong></p>
+<ul>
+<li>网页加载速度慢，因为要发起很多的二次请求，浏览器从服务器拿到html页面后，渲染过程中会不断向服务器请求资源。</li>
+<li>要处理错综复杂的依赖关系</li>
+</ul>
+<p><strong>如何解决上述的问题：</strong></p>
+<ul>
+<li>合并减少二次请求，压缩提高加载速度，雪碧图合并图片，图片的base64编码（让src属性指向一个编码的字符串，这样就可以在第一次请求页面就拿到图片，只适合一些小图片）,使用</li>
+<li>可以使用requireJS，也可以使用Gulp(是基于任务的，适合于灵活的小项目) / webpack（是基于整个项目进行构建的）解决依赖关系</li>
+</ul>
+<p><strong>什么是webpack：</strong></p>
+<p>是前端的一个自动化构建工具，基于node.js开发出来的，可以实现资源的合并、打包、压缩混淆等诸多功能</p>
+<p><strong>webpack安装方式：</strong></p>
+<ul>
+<li>npm install webpack -g全局安装</li>
+<li>项目根目录中运行npm install webpack –sava –dev安装到项目依赖中</li>
+</ul>
+<p><strong>webpack可以做什么：</strong></p>
+<ul>
+<li>可以处理js文件中的相互依赖关系，比如main.js使用import引入了其他文件，正式使用需要使用命令webpack .\src\main.js .\dist\bundle.js（webpack 要打包的文件路径 打包好的文件路径），这样bundle.js就可以实现引用</li>
+<li>可以处理JS的兼容问题，把浏览器不识别的语法转为可识别的</li>
+</ul>
+<p><strong>webpack.config.js：</strong>是webpack的一个配置文件，配置好项目的入口和出口文件，要建在项目的根目录下。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这个配置文件其实就是一个JS文件，通过node中的模块操作向外暴露一个配置对象，需要手动指定入口和出口</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>)  <span class="comment">//启用热更新的第2步</span></span><br><span class="line"><span class="comment">//只要是插件都要放到plugins里面</span></span><br><span class="line"><span class="keyword">const</span> htmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>)</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry: path.join(__dirname, <span class="string">'./src/main.js'</span>),  <span class="comment">//入口，表示要打包哪个文件</span></span><br><span class="line">    output: &#123;</span><br><span class="line">        path: path.join(__dirname, <span class="string">'./dist'</span>)  <span class="comment">//指定打包好的文件输出到哪个目录</span></span><br><span class="line">        filename: <span class="string">'bundle.js'</span>  <span class="comment">//指定输出文件的名称</span></span><br><span class="line">    &#125;,</span><br><span class="line">    devServer: &#123;  <span class="comment">//这是dev-server命令参数的第二种形式，相对来说方式麻烦一些，了解一下就行</span></span><br><span class="line">        <span class="comment">//--open --port 3000 --contentBase src --hot</span></span><br><span class="line">        open: <span class="literal">true</span>,   <span class="comment">//自动打开浏览器</span></span><br><span class="line">        port: <span class="number">3000</span>,   <span class="comment">//设置运行时的端口号</span></span><br><span class="line">        contentBase: <span class="string">'src'</span>,   <span class="comment">//指定托管的根目录</span></span><br><span class="line">        hot: <span class="literal">true</span>    <span class="comment">//启动热更新的第1步</span></span><br><span class="line">    &#125;,</span><br><span class="line">    plugins: [   <span class="comment">//配置插件的节点</span></span><br><span class="line">        <span class="keyword">new</span> webpack.HotModuleReplacementPlugin(),  <span class="comment">//new一个热更新的模块对象，启用热更新的第3步</span></span><br><span class="line">        <span class="keyword">new</span> htmlWebpackPlugin(&#123;  <span class="comment">//创建一个在内存中生产HTML页面的插件，可以做一些配置项</span></span><br><span class="line">            template: path.join(__dirname, <span class="string">'./src/index.html'</span>),  <span class="comment">//指定模板页面，根据模板生成内存中的页面</span></span><br><span class="line">            filename: <span class="string">'index.html'</span> <span class="comment">//指定生产的页面名称</span></span><br><span class="line">        &#125;)</span><br><span class="line">    ],</span><br><span class="line">    <span class="built_in">module</span>: &#123;   <span class="comment">//所有第三方模块加载器</span></span><br><span class="line">        rules: [   <span class="comment">//所有第三方模块的匹配模式</span></span><br><span class="line">            &#123; <span class="attr">test</span>:<span class="regexp">/\.css$/</span>, <span class="attr">use</span>:[<span class="string">'style-loader'</span>, <span class="string">'css-loader?modules'</span>] &#125;,   <span class="comment">//配置处理.css文件的loader规则，调用规则从右到左</span></span><br><span class="line">            &#123; <span class="attr">test</span>: <span class="regexp">/\.less$/</span>, <span class="attr">use</span>: [<span class="string">'style-loader'</span>, <span class="string">'css-loader'</span>, <span class="string">'less-loader'</span>] &#125;,  <span class="comment">//配置处理.less文件的第三方loader规则</span></span><br><span class="line">            &#123; <span class="attr">test</span>: <span class="regexp">/\.scss$/</span>, <span class="attr">use</span>: [<span class="string">'style-loader'</span>, <span class="string">'css-loader'</span>, <span class="string">'sass-loader'</span>] &#125;,  <span class="comment">//配置处理.scss文件的第三方loader规则</span></span><br><span class="line">            &#123; <span class="attr">test</span>: <span class="regexp">/\.(jpg|png|gif|bmp|jpeg)$/</span>, <span class="attr">use</span>: <span class="string">'url-loader?limit=7631&amp;name=[hase:8]-[name].[ext]'</span> &#125;,  <span class="comment">//配置处理图片路径，限制大于等于7631字节的图片不转化为base64编码，不设置name，打包后会将name通过hash编码转换为字符串防止重名,但防止出现问题，可以转化前八位</span></span><br><span class="line">            &#123; <span class="attr">test</span>:<span class="regexp">/\.(ttf|eot|svg|woff|woff2)$/</span>, <span class="attr">use</span>: <span class="string">'url-loader'</span> &#125;,    <span class="comment">//配置处理字体文件的loader</span></span><br><span class="line">            &#123; <span class="attr">test</span>: <span class="regexp">/\\.jsx?$/</span>, <span class="attr">use</span>: <span class="string">'babel-loader'</span>, <span class="attr">exclude</span>: <span class="regexp">/node_modules/</span> &#125; </span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>在控制台直接输入webpack命令执行的时候，webpack做了以下几步：</strong></p>
+<ul>
+<li>webpack发现没有通过命令的形式指定入口和出口</li>
+<li>webpack去项目的根目录查找一个叫做webpack.config.js的配置文件</li>
+<li>找到配置文件后，会去解析执行这个配置文件，然后就得到了配置文件中导出的配置对象</li>
+<li>当webpack拿到了配置对象后，就拿到了入口和出口，然后进行打包构建</li>
+</ul>
+<p><strong>使用webpack-dev-server实现自动打包编译功能</strong>（就像nodemon对node的作用一样）：</p>
+<ul>
+<li><p>安装：npm install webpack-dev-server -d把这个工具安装到项目的本地开发依赖</p>
+</li>
+<li><p>安装完毕后，这个工具的用法和webpack的用法一模一样</p>
+</li>
+<li><p>如果在项目本地安装的，是无法当做脚本命令在powershell终端中直接运行的，可以在package.json文件的script选项中加入“dev”: “webpack-dev-server –open –port 3000 –contentBase src –hot”(默认打开浏览器，端口3000，且默认首页，热加载)，这样在npm run的时候就会执行这个命令</p>
+<p>热加载会产生一些局部更新的文件，实现网页不重载就更新</p>
+</li>
+<li><p>要想正常运行，要求在本地项目中必须安装webpack-dev-server</p>
+</li>
+<li><p>webpack-dev-server帮我们打包生成的bundle.js文件，并没有存放到实际的物理磁盘上，而是直接托管到了电脑的内存中，所以在项目的根目录中找不到这个打包好的bundle.js</p>
+</li>
+<li><p>可以认为webpack-dev-server把打包好的文件以一种虚拟的形式，托管到了项目的根目录中，虽然看不到，但是和dist平级，这样运行比较快，因为磁盘转速是有限制的，而且每次刷新磁盘对磁盘也会产生损耗</p>
+</li>
+</ul>
+<p><strong>html-webpack-plugin：</strong>使用–contentBase指令的过程比较繁琐，所以使用这个插件自动在内存中根据指定页面生成一个内存的页面并且自动把打包好的bundle.js追加到页面中去</p>
+<ul>
+<li>安装：npm install html-webpack-plugin –save –dev安装到开发依赖</li>
+<li>在webpack配置文件中导入</li>
+<li>使用这个插件之后，不需要再手动处理bundle.js的引用路径，因为这个插件会帮我们自动创建一个合适的script，并且引用正确的路径</li>
+</ul>
+<p><strong>样式表打包：</strong>webpack默认只能打包JS类别的文件，无法处理其他的非JS类型的文件，如果要处理非JS类型的文件，需要手动安装一些合适的第三方loader加载器。</p>
+<ul>
+<li>安装：npm install style-loader css-loader -D</li>
+<li>打开webpack.config.js，在里面新增一个配置节点，叫做module，是一个对象，在这个对象上有一个rules属性，这个属性是个数组，这个数组中存放了所有第三方文件的匹配和处理规则</li>
+<li>处理less文件需要安装less-loader</li>
+<li>处理scss文件需要安装sass-loader以及node-sass(用npm一般装不下来，可以用cnpm装)</li>
+<li>默认情况下webpack无法处理CSS文件中的url地址，不管是图片还是字体库，因此需要npm install url-loader file-loader</li>
+</ul>
+<p>如果js文件中通过路径的形式去引入node_modules中的相关文件，可以直接省略路径前面的node_modules这一层目录，直接写包的名称，然后后面跟上具体的文件路径</p>
+<p><strong>webpack和npm中的几个问题</strong>：</p>
+<ul>
+<li><p>json文件里是不能写注释的</p>
+</li>
+<li><p>xxx不是内部或外部命令，在node_modules中查找是否有这个包，没有重新安装一下就好了</p>
+</li>
+<li><p>安装卡住之后ctrl+c终止了又重新装的时候可能会报错，因此最好把node_modules文件删除后再重新安装</p>
+</li>
+<li><p>webpack中默认只能处理一部分ES6的新语法，一些更高级的ES6语法或者ES7语法需要借助于第三方的loader来处理，第三方将高级语法转换为低级语法后，会把结果交给webpack去打包。</p>
+<ul>
+<li><p>通过Babel来转换，运行如下两套命令安装两套包，第一套(相当于Babel的转换工具)npm install babel-core babel-loader babel-plugin-transform-runtime -D，第二套(相当于语法)npm install babel-preset-env babel-preset-stage-0 -D。</p>
+</li>
+<li><p>然后在webpack配置文件module节点下的rules数组中添加一个新的匹配规则：{ test: /\.js$/, use: ‘babel-loader’, exclude: /node_modules/ } </p>
+</li>
+<li><p>如果不排除node_modules，Babel会把其中所有的第三方JS文件都打包编译，消耗CPU，打包速度非常慢，哪怕最后Babel把其中所有的JS都转换了，项目也无法正常进行，所以排除。</p>
+</li>
+<li><p>在项目的根目录中新建一个叫做.babelrc的Babel配置文件，属于JSON规范（不能写注释，字符串必须用双引号）：preset可以认为是语法，plugins就是插件</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"presets"</span> : [<span class="string">"env"</span>, <span class="string">"stage-0"</span>],</span><br><span class="line">    <span class="attr">"plugins"</span> : [<span class="string">"transform-runtime"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+
       
 
       
@@ -206,7 +302,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
         		</li>
       		
 		</ul>
@@ -262,7 +358,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/03/前端编程题/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/12/webpack/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -276,18 +372,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/02/06/移动web开发-响应式开发基础知识/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/02/13/React/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          移动web/APP开发+响应式开发基础知识
+          React
         
       </div>
     </a>
   
   
-    <a href="/2020/02/01/面试-笔试技巧/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">面试&amp;笔试技巧</div>
+    <a href="/2020/02/12/Untitled/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
       <i class="icon-circle-right"></i>
     </a>
   

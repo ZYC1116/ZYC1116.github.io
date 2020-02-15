@@ -6,17 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>前端 | RootUShaw</title>
+  <title>移动web/APP开发+响应式开发基础知识 | RootUShaw</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="面试">
+  <meta name="description" content="一、移动web开发1、基础知识（1）屏幕尺：屏幕对角线的尺寸 （2）分辨率：屏幕水平和垂直方向的像素数（一般px表示） （3）长度单位：px, em, pt(点，一般用于ios)，in(英寸)，cm （4）像素密度DPI / PPI：屏幕每英寸的像素数量，可以通过勾股定理进行计算，大于320一般就可以认为是高清屏。屏幕尺寸固定，PPI越大，像素的实际大小就越小。 （5）设备独立像素：不同的PPI屏">
+<meta name="keywords" content="前端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端">
-<meta property="og:url" content="http://yoursite.com/2020/02/03/前端编程题/index.html">
+<meta property="og:title" content="移动web&#x2F;APP开发+响应式开发基础知识">
+<meta property="og:url" content="http://yoursite.com/2020/02/06/移动web开发-响应式开发基础知识/index.html">
 <meta property="og:site_name" content="RootUShaw">
+<meta property="og:description" content="一、移动web开发1、基础知识（1）屏幕尺：屏幕对角线的尺寸 （2）分辨率：屏幕水平和垂直方向的像素数（一般px表示） （3）长度单位：px, em, pt(点，一般用于ios)，in(英寸)，cm （4）像素密度DPI / PPI：屏幕每英寸的像素数量，可以通过勾股定理进行计算，大于320一般就可以认为是高清屏。屏幕尺寸固定，PPI越大，像素的实际大小就越小。 （5）设备独立像素：不同的PPI屏">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-02-06T11:37:43.989Z">
+<meta property="og:updated_time" content="2020-02-13T11:24:37.650Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端">
+<meta name="twitter:title" content="移动web&#x2F;APP开发+响应式开发基础知识">
+<meta name="twitter:description" content="一、移动web开发1、基础知识（1）屏幕尺：屏幕对角线的尺寸 （2）分辨率：屏幕水平和垂直方向的像素数（一般px表示） （3）长度单位：px, em, pt(点，一般用于ios)，in(英寸)，cm （4）像素密度DPI / PPI：屏幕每英寸的像素数量，可以通过勾股定理进行计算，大于320一般就可以认为是高清屏。屏幕尺寸固定，PPI越大，像素的实际大小就越小。 （5）设备独立像素：不同的PPI屏">
   
     <link rel="alternative" href="/atom.xml" title="RootUShaw" type="application/atom+xml">
   
@@ -152,27 +155,228 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-前端编程题" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-移动web开发-响应式开发基础知识" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      前端
+      移动web/APP开发+响应式开发基础知识
     </h1>
   
 
         
-        <a href="/2020/02/03/前端编程题/" class="archive-article-date">
-  	<time datetime="2020-02-03T10:10:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-03</time>
+        <a href="/2020/02/06/移动web开发-响应式开发基础知识/" class="archive-article-date">
+  	<time datetime="2020-02-06T14:39:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="一、移动web开发"><a href="#一、移动web开发" class="headerlink" title="一、移动web开发"></a>一、移动web开发</h2><h4 id="1、基础知识"><a href="#1、基础知识" class="headerlink" title="1、基础知识"></a>1、基础知识</h4><p>（1）屏幕尺：屏幕对角线的尺寸</p>
+<p>（2）分辨率：屏幕水平和垂直方向的像素数（一般px表示）</p>
+<p>（3）长度单位：px, em, pt(点，一般用于ios)，in(英寸)，cm</p>
+<p>（4）像素密度DPI / PPI：屏幕每英寸的像素数量，可以通过勾股定理进行计算，大于320一般就可以认为是高清屏。屏幕尺寸固定，PPI越大，像素的实际大小就越小。</p>
+<p>（5）设备独立像素：不同的PPI屏幕需要共存，如果以像素为单位，同样尺寸的图像在不同PPI设备上的显示大小可能不同，所以需要一个新的单位，能够保证图像内容在不同的PPI设备上看起来大小差不多，就是独立像素，在IOS设备上是pt，在Android设备上是DIP / DP。</p>
+<p>（6）物理像素：屏幕渲染图像的最小单位，是屏幕的物理属性，人为不能改变</p>
+<p>​          CSS像素：默认和PC端物理像素一致，通过浏览器缩放可以改变</p>
+<p>​          为了解决这个问题，需要美工准备同一张图的多种不同素材，根据不同情况使用</p>
+<h4 id="2、视口"><a href="#2、视口" class="headerlink" title="2、视口"></a>2、视口</h4><p>（1）用来约束网站中最顶级元素html的，决定了html的大小</p>
+<p>（2）PC端视口大小取决于浏览器窗口大小。如果CSS中固定了元素的宽高值，在视口大小改变时会出现滚动条，解决方法就是使用百分比来设置宽高</p>
+<p>（3）移动端上视口不再受限于浏览器窗口，允许开发人员自由设置，浏览器会默认设置一个大小的视口，一般这个值会大于屏幕的尺寸</p>
+<p>（4）移动设备上我们可以定义两个viewport，把 layout viewport重置为ideal viewport就可以解决移动端网页展示的问题了</p>
+<p>​          layout viewport：可以进行网页布局区域的大小（默认的），document.documentElement.clientWidth和clientHeight</p>
+<p>​          ideal viewport：window.screen.width，实际的视口大小</p>
+<h4 id="3、屏幕适配"><a href="#3、屏幕适配" class="headerlink" title="3、屏幕适配"></a>3、屏幕适配</h4><p>移动页面最理想的状态：避免滚动条且不被默认缩放处理，可以通过设置\&lt;meta name = “viewport” content = “”>来控制，并改变浏览器默认的layout viewport的宽度</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--对viewport设置的meta建议写在已有的meta标签后面--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--name = "viewport":说明当前的meta标签是用来设置viewport的，这个只有在移动端才会有效，content = ""进行宽度设置--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--initial-scale = 1.0是取消浏览器的默认缩放，initial-scale =  ideal viewport / layout viewport --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span> = <span class="string">"viewport"</span> <span class="attr">content</span> = <span class="string">"width = device-width user-scalable = no initial-scale = 1.0"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>此外，content中还可以进行以下设置</p>
+<ul>
+<li>maximum-scale：默认状态下最大缩放比例</li>
+<li>minimum-scale：默认状态下最小缩放比例</li>
+<li>user-scalable：是否允许用户进行缩放</li>
+</ul>
+<h2 id="二、响应式"><a href="#二、响应式" class="headerlink" title="二、响应式"></a>二、响应式</h2><p>1、网页布局方式：几种布局方式往往是相互结合使用的</p>
+<ul>
+<li>固定宽度布局：为网页设置固定宽度，通常以px为单位，常见于PC端网页</li>
+<li>流式布局：为网页设置一个相对的宽度，以百分比做长度单位</li>
+<li>栅格化布局：将网页宽度人为的划分为均等的长度，然后排版时以这些均等的长度作为度量单位，利用百分比作为长度单位来划分均等的长度</li>
+<li><p>响应式布局：通过检测设备信息，决定网页布局方式，如果用户采用不同的设备访问同一个网页，有可能会看到不一样的内容。需要利用<strong>媒体查询</strong>写很多冗余代码，使网页整体体积变大，应用在移动设备上会带来严重的性能问题。（常用于官网，博客，新闻资讯类网站，这些网站以浏览内容为主，不需要复杂的交互）</p>
+<p>2、一般会对常见的设备尺寸进行划分后，再分别确定为不同的尺寸设备设计专门的布局方式，一般查询screen的宽度</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>布局宽度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>宽屏设备（1200px以上）</td>
+<td>≥1200px</td>
+</tr>
+<tr>
+<td>中等屏幕（992px-1200px）</td>
+<td>992≤w＜1200</td>
+</tr>
+<tr>
+<td>小屏设备（768px-992px)</td>
+<td>768≤w＜992</td>
+</tr>
+<tr>
+<td>超小屏幕（移动设备）</td>
+<td>w≤768px</td>
+</tr>
+</tbody>
+</table>
+<p>对应的媒体查询：</p>
+<p>3、之前通常的做法是对移动端单独开发一套特定的版本，但是如果移动设备种类变多，成本变大，响应式开发就是可以在一个网站兼容多种终端。</p>
+<p>4、响应式开发和web开发的区别：</p>
+<table>
+<thead>
+<tr>
+<th>开发方式</th>
+<th>移动端+PC端</th>
+<th>响应式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>应用场景</td>
+<td>一般在已经有PC端的网站，开发移动端的时候，只需要单独开发移动端</td>
+<td>针对新建站的一些网站，现在要求适配移动端，就一套页面兼容各种终端，灵活</td>
+</tr>
+<tr>
+<td>开发</td>
+<td>针对性强，开发效率高</td>
+<td>兼容各种终端，效率低</td>
+</tr>
+<tr>
+<td>适配</td>
+<td>只适配移动端，pad上体验较差</td>
+<td>可以适配各种终端</td>
+</tr>
+<tr>
+<td>效率</td>
+<td>代码简洁，加载快</td>
+<td>代码相对复杂，加载慢</td>
+</tr>
+</tbody>
+</table>
+<p>5、媒体查询的基本实现方式，常用属性设置：</p>
+<p><a href="http://www.runoob.com/cssref/css3-pr-mediaquery.html" target="_blank" rel="noopener">http://www.runoob.com/cssref/css3-pr-mediaquery.html</a></p>
+<ul>
+<li><p>CSS语法</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> mediatype and|not|only(media feature)&#123;</span><br><span class="line">    <span class="selector-tag">CSS-code</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*可以针对不同的媒体使用不同的stylesheets*/</span></span><br><span class="line">&lt;link rel = "stylesheet" media = "mediatype and|not|only (media feature)" href = "mystylesheet.css"&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>媒体类型</p>
+<p>| 值     | 描述                     |<br>| —— | ———————— |<br>| all    | 用于所有设备             |<br>| print  | 用于打印机和打印预览     |<br>| screen | 电脑屏幕，平板，智能手机 |<br>| speech | 屏幕阅读器等发声设备     |</p>
+</li>
+<li><p>媒体功能：加device是只有设备宽度改变的时候才会发生响应，如果只是拖动浏览器窗口大小是不会发生改变的，所以一般都使用不加device的值</p>
+<p>| 值                | 描述                 |<br>| —————– | ——————– |<br>| device-height     | 屏幕可见高度         |<br>| <strong>device-width</strong>  | 屏幕可见宽度         |<br>| max-device-height | 屏幕可见最大高度     |<br>| max-device-width  | 屏幕可见最大宽度     |<br>| min-device-height | 屏幕可见最小高度     |<br>| min-device-width  | 屏幕可见最小宽度     |<br>| max-height        | 页面最大可见区域高度 |<br>| <strong>max-width</strong>     | 页面最大可见区域宽度 |<br>| min-height        | 页面最小可见区域高度 |<br>| min-width         | 页面最小可见区域宽度 |</p>
+</li>
+<li><p>案例说明</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*设置不同屏幕宽度区间下的body的背景色样式*/</span></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">media</span> screen and (max-width: <span class="number">768px</span>)&#123;</span><br><span class="line">    <span class="selector-tag">body</span>&#123;</span><br><span class="line">        <span class="attribute">background-color</span>: green;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">768px</span>) and(max-width: <span class="number">992px</span>)&#123;</span><br><span class="line">    <span class="selector-tag">body</span>&#123;</span><br><span class="line">        <span class="attribute">background-color</span>: blue;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>媒体查询条件判断是向上兼容，向下覆盖的。（会一直向下查询到不满足条件为止）（先判断最小值，从小到大来写）</p>
+</li>
+</ul>
+<p>6、CSS框架：bootstrap，Amaze UI，Framework7</p>
+<p>​      bootstrap是一种HTML, CSS, JS框架，用于开发响应式布局，移动设备优先的WEB项目。bootstrap使用的栅格布局。使用的时候只要粘贴官网中的基本模板，然后引用响应的组件或者样式，再根据需求进行定制化的修改就可以了</p>
+<p>​      bootstrap提供了一套响应式、移动设备有限的流式栅格系统，随着屏幕或视口的增加，系统会自动分为最多12列。且它是向上兼容的，如果设置了宽度较小的样式，会传递到宽度较大的样式</p>
+<p>​      栅格系统就是来面熟设置当前子元素在指定屏幕下占据当前屏幕12等分中的n等分。先添加容器container/container-fluid，在容器中添加row，在row中添加子元素（col-xs/sm/md/lg-1~12)设置栅格样式，在子元素添加具体内容。</p>
+<p>​      列排序：</p>
+<ul>
+<li><p>col-xs-offset-2：偏移，偏移的距离是以栅格作为单位的，这种偏移会直接影响后面的元素，造成后面的元素换行显示，因为这个是通过margin-left属性实现的</p>
+</li>
+<li><p>col-xs-push-2：往后-右推，通过定位（left）来实现的，不会影响其他元素，但是可能会发生重叠。</p>
+</li>
+<li><p>col-xs-pull-2：往前-左拉，同上</p>
+<p>嵌套列：可以在col里嵌套row，但是不能嵌套container，因为row的宽度是参照父元素的栅格的，但是container的宽度是固定的。</p>
+<p>可见不可见的类：hidden-xs/sm/md/lg，在某种宽度下是隐藏的，但是没有向上兼容的特点</p>
+</li>
+</ul>
+<p>7、less：一种<strong>动态的样式表语言</strong>，通过简洁明了的语法定义，使编写CSS的工作变得简单，通过编辑器进行编译，然后编程浏览器可识别的CSS文件</p>
+<ul>
+<li><p>安装</p>
+<ul>
+<li>安装Nodejs环境</li>
+<li>npm install -g less (验证lessc -v) node packet manager</li>
+<li>命令行编译lessc path/xxx.less path/xxx.css</li>
+</ul>
+</li>
+<li><p>编译（sublime安装插件）</p>
+<ul>
+<li>npm install -g less-plugin-clean-css(使用sublime_text才用)</li>
+<li>打开命令面板</li>
+<li>intall package</li>
+<li>安装LESS, Lessc, Less2Css三个插件</li>
+</ul>
+</li>
+<li><p>语法</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*注释，会被编译*/</span></span><br><span class="line"><span class="comment">//也是注释，但是不会被编译</span></span><br><span class="line"><span class="comment">/*变量：@变量名：值；*/</span></span><br><span class="line"><span class="variable">@baseColor:</span> <span class="number">#666666</span>;</span><br><span class="line"><span class="selector-tag">a</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="variable">@baseColor</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*混入：可以将一个定义好的样式引入到另一个样式中，类似于函数的调用。设置了默认值，然后传参调用*/</span></span><br><span class="line"><span class="selector-class">.addRadius</span>(<span class="variable">@r</span>: <span class="number">10px</span>) &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="variable">@r</span>;</span><br><span class="line">    <span class="attribute">-webkit-border-radius</span>: <span class="variable">@r</span>;</span><br><span class="line">    <span class="attribute">-moz-border-radius</span>: <span class="variable">@r</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="comment">//引入已经写好的圆角样式</span></span><br><span class="line">    <span class="selector-class">.addRadius</span>(<span class="number">5px</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*嵌套：实现选择器的继承，减少代码量，同时使代码结构更清晰*/</span></span><br><span class="line"><span class="selector-class">.jd_header</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="selector-class">.addRadius</span>();</span><br><span class="line">    <span class="comment">//&gt;直接子元素</span></span><br><span class="line">    &gt; <span class="selector-tag">div</span>&#123;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">        &gt; <span class="selector-tag">a</span>&#123;</span><br><span class="line">            <span class="attribute">text-decoration</span>: underline;</span><br><span class="line">            <span class="comment">//&amp;相当于取一个交集</span></span><br><span class="line">            <span class="selector-tag">&amp;</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">                <span class="attribute">text-decoration</span>: none;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="三、移动APP开发"><a href="#三、移动APP开发" class="headerlink" title="三、移动APP开发"></a>三、移动APP开发</h2><p><strong>什么是混合移动APP开发</strong>：</p>
+<ul>
+<li>苹果上的软件使用的是OC或者swift</li>
+<li>安卓上的软件使用的是JAVA以及安卓的控件进行开发</li>
+<li>苹果和安卓平台上共有的软件：两套开发人员</li>
+<li>前端混合移动app开发：把开发web网站的技术(HTML, CSS, JS)通过某种方式移植到移动app开发上进行使用，利用web开发技术进行移动端开发体验</li>
+</ul>
+<p><strong>移动APP开发的几个概念</strong>：</p>
+<ul>
+<li>原生开发（NativeApp）：使用IOS或者Android官方提供的工具，开发平台，配套语言进行手机APP开发</li>
+<li>混合开发：使用前端已有的技术，然后搭配一些相关的打包编译技术开发出一个手机APP安装到手机中使用</li>
+<li>APP的分类<ul>
+<li>按照平台<ul>
+<li>PC端：浏览器，代码编辑器，PC端的游戏</li>
+<li>移动端：QQ，微信爱奇艺等等</li>
+</ul>
+</li>
+<li>按照功能：游戏，应用</li>
+</ul>
+</li>
+<li>APP和WEB的区别<ul>
+<li>APP：流畅，稳定，基本上一些APP都可以脱网运行，用户体验好。但是不能跨平台。</li>
+<li>WEB：特指那些基于浏览器web网页（就是网页），可以跨平台，没有APP流畅，不稳定，受限于网速和网络</li>
+</ul>
+</li>
+</ul>
+<p><strong>开发方式的选择</strong>：</p>
+<ul>
+<li>如果曾经使用原生技术开发过一些APP，在维护的时候就要使用原生技术来维护</li>
+<li>需要一些游戏级别的应用，推荐原生，运行效率高，耗电量处理很好</li>
+<li>做应用级别的软件，可以使用混合APP</li>
+<li>如果有好的项目立案，需要快速做出demo，可以使用混合APP，开发周期短，能快速上线，抢占市场【裤衩开发】</li>
+</ul>
+<p><strong>项目开发流程</strong>：</p>
+<ul>
+<li>需求调研：产品定位，受众群体，市场需求，开发价值。产出需求文档</li>
+<li>产品设计：功能模块，流程逻辑，确定项目的基本功能。产出设计文档交互稿</li>
+<li>项目开发：项目架构，美工，前端，后台，测试【注意前后端分离的概念】</li>
+<li>运营维护：上线试运行，调Bug，微调功能模块，产品迭代</li>
+</ul>
+<p><strong>三大主流技术之间的关系</strong>：三个都是前端框架，后面都是打包工具（也提供了一些好用的组件），最终打包出一个可安装到手机端程序的安装包。</p>
+<ul>
+<li>Angular和Ionic：最早的前端框架，学习曲线比较陡</li>
+<li>Vue.js和Weex：比较火，中国人开发的，文档友好一些</li>
+<li>React.js和React-Native：比较流行，设计的比较好</li>
+</ul>
+<p><strong>前端混合开发框架：</strong>HTML5+（是一个产业联盟，用于做手机APP），React-Native，Weex，Ionic。HTML5+或Ionic开发效率比较高，内部本质上是一个网站，运行效率和性能不太好。React-Native和Weex开发的是一个模板项目，可用的组件没有前两者多</p>
+<p><strong>移动APP开发环境配置</strong>：</p>
+<ul>
+<li>安装java jdk：安装后配置到全局系统环境变量中，javac检查</li>
+<li>安装Node.js：node -v检查</li>
+<li>安装C++环境：一般自带，不需手动安装，出错再说</li>
+<li>安装git环境：git –version检查</li>
+<li>安装Python</li>
+<li>配置安卓环境</li>
+</ul>
+
       
 
       
@@ -206,7 +410,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
         		</li>
       		
 		</ul>
@@ -262,7 +466,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/03/前端编程题/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/06/移动web开发-响应式开发基础知识/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -276,18 +480,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/02/06/移动web开发-响应式开发基础知识/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/02/08/Node-js/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          移动web/APP开发+响应式开发基础知识
+          Node.js
         
       </div>
     </a>
   
   
-    <a href="/2020/02/01/面试-笔试技巧/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">面试&amp;笔试技巧</div>
+    <a href="/2020/02/03/前端编程题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端</div>
       <i class="icon-circle-right"></i>
     </a>
   
