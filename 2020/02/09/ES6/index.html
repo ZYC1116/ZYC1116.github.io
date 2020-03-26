@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="RootUShaw">
 <meta property="og:description" content="一、let和const1、之前只有全局和函数作用域，ES6新增了块作用域，一个{}就是一个块作用域 2、let   声明的变量只在 let 命令所在的代码块内有效。适合于循环计数。var在全局有效 只能声明一次，不能重复声明，var可以声明多次 不存在变量提升，var会变量提升  3、const  声明一个只读的常量，一旦声明，常量的值就不能改变。其实是保证指针的指向不变。普通类型的变量就指向存值">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-02-14T08:15:06.743Z">
+<meta property="og:updated_time" content="2020-02-16T12:43:40.753Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6">
 <meta name="twitter:description" content="一、let和const1、之前只有全局和函数作用域，ES6新增了块作用域，一个{}就是一个块作用域 2、let   声明的变量只在 let 命令所在的代码块内有效。适合于循环计数。var在全局有效 只能声明一次，不能重复声明，var可以声明多次 不存在变量提升，var会变量提升  3、const  声明一个只读的常量，一旦声明，常量的值就不能改变。其实是保证指针的指向不变。普通类型的变量就指向存值">
@@ -508,6 +508,8 @@
 </li>
 <li><p>实例方法：类内部定义</p>
 </li>
+<li><p>类的方法默认是不会绑定this的，所以如果没有在方法后面添加 () ，需要为这个方法绑定this</p>
+</li>
 </ul>
 <p>3、实例化：通过new关键字，共享原型对象</p>
 <p>4、继承和封装：getter和setter，getter不能单独出现，二者必须同级出现。通过extends实现类的继承。子类 constructor 方法中必须有 super ，且必须出现在 this 之前。父类的构造函数调用只能发生在子类构造函数中。<strong>不能继承常规对象</strong></p>
@@ -725,7 +727,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/02/12/Untitled/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/02/12/JS核心机制/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -735,8 +737,8 @@
     </a>
   
   
-    <a href="/2020/02/08/Node-js/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Node.js</div>
+    <a href="/2020/02/08/Node-js+Express+mongodb/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Node.js+Express</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -867,6 +869,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面经</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
               </li>
              
               <li class="article-tag-list-item">
